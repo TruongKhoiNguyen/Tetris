@@ -20,3 +20,4 @@ typedef float f32;
 typedef double f64;
 
 #include "colors.h"
+#include "structures.h"
