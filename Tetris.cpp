@@ -810,6 +810,8 @@ wmain()
     Game_State game = {};
     Input_State input = {};
 
+    srand(time(0));
+
     spawn_piece(&game);
 
     game.piece.tetrino_index = 2;
