@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <cstring>
 #include <cassert>
+#include <ctime>
 
 #include <SDL.h>
 #include <SDL_ttf.h>
@@ -21,3 +22,4 @@ typedef double f64;
 
 #include "colors.h"
 #include "structures.h"
+#include "core.h"

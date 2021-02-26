@@ -143,10 +143,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="core.cpp" />
     <ClCompile Include="Tetris.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h" />
+    <ClInclude Include="core.h" />
     <ClInclude Include="include.h" />
     <ClInclude Include="structures.h" />
   </ItemGroup>
