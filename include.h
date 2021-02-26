@@ -5,7 +5,6 @@
 #include <cstdio>
 #include <cstring>
 #include <cassert>
-#include <ctime>
 
 #include <SDL.h>
 #include <SDL_ttf.h>
