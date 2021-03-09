@@ -27,19 +27,21 @@ int main(int argc, char* argv[])
     const char* font_name = "Futura Black.ttf";
     TTF_Font* font = TTF_OpenFont(font_name, 24);
 
-    Game_State game = {};
-    Input_State input = {};
+    Game_State* game = new Game_State();
+    Input_State* input = new Input_State();
+    Input_State* prev_input = new Input_State();
+
 
     srand((u32)time(0));
 
-    spawn_piece(&game);
+    spawn_piece(game);
 
-    game.piece.tetromino_index = 2;
+    game->piece.tetromino_index = 2;
 
     bool quit = false;
     while (!quit)
     {
-        game.time = SDL_GetTicks() / 1000.0f;
+        game->time = SDL_GetTicks() / 1000.0f;
 
         SDL_Event e;
         while (SDL_PollEvent(&e) != 0)
@@ -58,28 +60,32 @@ int main(int argc, char* argv[])
             quit = true;
         }
 
-        Input_State prev_input = input;
+        *prev_input = *input;
 
-        input.left = key_states[SDL_SCANCODE_LEFT];
-        input.right = key_states[SDL_SCANCODE_RIGHT];
-        input.up = key_states[SDL_SCANCODE_UP];
-        input.down = key_states[SDL_SCANCODE_DOWN];
-        input.a = key_states[SDL_SCANCODE_SPACE];
+        input->left = key_states[SDL_SCANCODE_LEFT];
+        input->right = key_states[SDL_SCANCODE_RIGHT];
+        input->up = key_states[SDL_SCANCODE_UP];
+        input->down = key_states[SDL_SCANCODE_DOWN];
+        input->a = key_states[SDL_SCANCODE_SPACE];
 
-        input.dleft = input.left - prev_input.left;
-        input.dright = input.right - prev_input.right;
-        input.dup = input.up - prev_input.up;
-        input.ddown = input.down - prev_input.down;
-        input.da = input.a - prev_input.a;
+        input->dleft = input->left - prev_input->left;
+        input->dright = input->right - prev_input->right;
+        input->dup = input->up - prev_input->up;
+        input->ddown = input->down - prev_input->down;
+        input->da = input->a - prev_input->a;
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
         SDL_RenderClear(renderer);
 
-        update_game(&game, &input);
-        render_game(&game, renderer, font);
+        update_game(game, input);
+        render_game(game, renderer, font);
 
         SDL_RenderPresent(renderer);
     }
+
+    delete prev_input;
+    delete input;
+    delete game;
 
     TTF_CloseFont(font);
     SDL_DestroyRenderer(renderer);
