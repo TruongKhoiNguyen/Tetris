@@ -145,14 +145,12 @@
   <ItemGroup>
     <ClCompile Include="core.cpp" />
     <ClCompile Include="Tetris.cpp" />
-    <ClCompile Include="user_interface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="include.h" />
     <ClInclude Include="structures.h" />
-    <ClInclude Include="user_interface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
