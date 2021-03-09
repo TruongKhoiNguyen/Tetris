@@ -1,40 +1,45 @@
-#include "include.h"
+#include "Game.h"
 
-int main(int argc, char* argv[])
+Game::Game ()
 {
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
-    {
-        return 1;
-    }
+    SDL_Init (SDL_INIT_VIDEO);
+    TTF_Init ();
 
-    if (TTF_Init() < 0)
-    {
-        return 2;
-    }
-
-    SDL_Window* window = SDL_CreateWindow(
+    window = SDL_CreateWindow (
         "Tetris",
-        SDL_WINDOWPOS_UNDEFINED,
-        SDL_WINDOWPOS_UNDEFINED,
-        300,
-        720,
+        SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+        300, 720,
         SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
-    SDL_Renderer* renderer = SDL_CreateRenderer(
+
+    renderer = SDL_CreateRenderer (
         window,
         -1,
         SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-    const char* font_name = "Futura Black.ttf";
-    TTF_Font* font = TTF_OpenFont(font_name, 24);
+    const char* font_name = "novem___.ttf";
+    font = TTF_OpenFont (font_name, 24);
+}
 
-    Game_State game = {};
-    Input_State input = {};
+Game::~Game ()
+{
+    TTF_CloseFont(font);
+
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+}
+
+void Game::run ()
+{
+    Game_State* game = new Game();
+    Input_State* input = new Input_State();
+    Input_State* prev_input = new Input_State();
 
     srand((u32)time(0));
 
     spawn_piece(&game);
 
-    game.piece.tetromino_index = 2;
+    game.piece.tetrino_index = 2;
 
     bool quit = false;
     while (!quit)
@@ -80,10 +85,4 @@ int main(int argc, char* argv[])
 
         SDL_RenderPresent(renderer);
     }
-
-    TTF_CloseFont(font);
-    SDL_DestroyRenderer(renderer);
-    SDL_Quit();
-
-    return 0;
 }

@@ -15,19 +15,19 @@ matrix_set(u8* values, s32 width, s32 row, s32 col, u8 value)
 }
 
 inline u8
-tetrino_get(const Tetrino* tetrino, s32 row, s32 col, s32 rotation)
+tetromino_get(const Tetromino* tetromino, s32 row, s32 col, s32 rotation)
 {
-    s32 side = tetrino->side;
+    s32 side = tetromino->side;
     switch (rotation)
     {
     case 0:
-        return tetrino->data[row * side + col];
+        return tetromino->data[row * side + col];
     case 1:
-        return tetrino->data[(side - col - 1) * side + row];
+        return tetromino->data[(side - col - 1) * side + row];
     case 2:
-        return tetrino->data[(side - row - 1) * side + (side - col - 1)];
+        return tetromino->data[(side - row - 1) * side + (side - col - 1)];
     case 3:
-        return tetrino->data[col * side + (side - row - 1)];
+        return tetromino->data[col * side + (side - row - 1)];
     }
     return 0;
 }
@@ -112,18 +112,18 @@ bool
 check_piece_valid(const Piece_State* piece,
     const u8* board, s32 width, s32 height)
 {
-    const Tetrino* tetrino = TETRINOS + piece->tetrino_index;
-    assert(tetrino);
+    const Tetromino* tetromino = TETROMINOES + piece->tetromino_index;
+    assert(tetromino);
 
     for (s32 row = 0;
-        row < tetrino->side;
+        row < tetromino->side;
         ++row)
     {
         for (s32 col = 0;
-            col < tetrino->side;
+            col < tetromino->side;
             ++col)
         {
-            u8 value = tetrino_get(tetrino, row, col, piece->rotation);
+            u8 value = tetromino_get(tetromino, row, col, piece->rotation);
             if (value > 0)
             {
                 s32 board_row = piece->offset_row + row;
@@ -157,16 +157,16 @@ check_piece_valid(const Piece_State* piece,
 void
 merge_piece(Game_State* game)
 {
-    const Tetrino* tetrino = TETRINOS + game->piece.tetrino_index;
+    const Tetromino* tetromino = TETROMINOES + game->piece.tetromino_index;
     for (s32 row = 0;
-        row < tetrino->side;
+        row < tetromino->side;
         ++row)
     {
         for (s32 col = 0;
-            col < tetrino->side;
+            col < tetromino->side;
             ++col)
         {
-            u8 value = tetrino_get(tetrino, row, col, game->piece.rotation);
+            u8 value = tetromino_get(tetromino, row, col, game->piece.rotation);
             if (value)
             {
                 s32 board_row = game->piece.offset_row + row;
@@ -199,7 +199,7 @@ void
 spawn_piece(Game_State* game)
 {
     game->piece = {};
-    game->piece.tetrino_index = (u8)random_int(0, ARRAY_COUNT(TETRINOS));
+    game->piece.tetromino_index = (u8)random_int(0, ARRAY_COUNT(TETROMINOES));
     game->piece.offset_col = WIDTH / 2;
     game->next_drop_time = game->time + get_time_to_next_drop(game->level);
 }

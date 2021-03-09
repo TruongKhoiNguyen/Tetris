@@ -21,6 +21,9 @@
     <ClCompile Include="core.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game_renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h">
@@ -33,6 +36,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game_renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data_type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
