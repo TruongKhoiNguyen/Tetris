@@ -12,6 +12,11 @@ int main(int argc, char* argv[])
         return 2;
     }
 
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1)
+    {
+        printf("%s", Mix_GetError());
+    }
+
     SDL_Window* window = SDL_CreateWindow(
         "Tetris",
         SDL_WINDOWPOS_UNDEFINED,
@@ -24,8 +29,8 @@ int main(int argc, char* argv[])
         -1,
         SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-    const char* font_name = "Futura Black.ttf";
-    TTF_Font* font = TTF_OpenFont(font_name, 24);
+    const char* font_name = "PressStart2P-vaV7.ttf";
+    TTF_Font* font = TTF_OpenFont(font_name, 16);
 
     Game_State* game = new Game_State();
     Input_State* input = new Input_State();
@@ -37,6 +42,13 @@ int main(int argc, char* argv[])
     spawn_piece(game);
 
     game->piece.tetromino_index = 2;
+
+    Mix_Music* music = Mix_LoadMUS("Soviet_anthem.mp3");
+    if (music == NULL)
+    {
+        printf("%s", Mix_GetError());
+    }
+    Mix_PlayMusic(music, -1);
 
     bool quit = false;
     while (!quit)
@@ -87,6 +99,7 @@ int main(int argc, char* argv[])
     delete input;
     delete game;
 
+    Mix_CloseAudio();
     TTF_CloseFont(font);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
