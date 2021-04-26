@@ -9,9 +9,23 @@ struct Tetromino
     const s32 side;
 };
 
-inline Tetromino tetromino(const u8* data, s32 side)
+inline Tetromino tetromino(const u8* data, s32 side);
+
+inline u8 tetromino_get(const Tetromino* tetromino, s32 row, s32 col, s32 rotation)
 {
-    return { data, side };
+    s32 side = tetromino->side;
+    switch (rotation)
+    {
+    case 0:
+        return tetromino->data[row * side + col];
+    case 1:
+        return tetromino->data[(side - col - 1) * side + row];
+    case 2:
+        return tetromino->data[(side - row - 1) * side + (side - col - 1)];
+    case 3:
+        return tetromino->data[col * side + (side - row - 1)];
+    }
+    return 0;
 }
 
 const u8 TETROMINO_1[] = {

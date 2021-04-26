@@ -7,10 +7,6 @@
 #include "Play_Score.h"
 #include "Timer.h"
 
-const int WIDTH = 10;
-const int HEIGHT = 22;
-const int VISIBLE_HEIGHT = 20;
-
 struct Game_State
 {
     u8 board[WIDTH * HEIGHT];
@@ -28,5 +24,19 @@ struct Game_State
 
     Timer timer;
 };
+
+inline u8
+matrix_get(const u8* values, s32 width, s32 row, s32 col)
+{
+    s32 index = row * width + col;
+    return values[index];
+}
+
+inline void
+matrix_set(u8* values, s32 width, s32 row, s32 col, u8 value)
+{
+    s32 index = row * width + col;
+    values[index] = value;
+}
 
 #endif //CORE_GAME_STATE_H

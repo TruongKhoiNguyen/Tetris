@@ -1,38 +1,6 @@
 #include "include.h"
 
 inline u8
-matrix_get(const u8* values, s32 width, s32 row, s32 col)
-{
-    s32 index = row * width + col;
-    return values[index];
-}
-
-inline void
-matrix_set(u8* values, s32 width, s32 row, s32 col, u8 value)
-{
-    s32 index = row * width + col;
-    values[index] = value;
-}
-
-inline u8
-tetromino_get(const Tetromino* tetromino, s32 row, s32 col, s32 rotation)
-{
-    s32 side = tetromino->side;
-    switch (rotation)
-    {
-    case 0:
-        return tetromino->data[row * side + col];
-    case 1:
-        return tetromino->data[(side - col - 1) * side + row];
-    case 2:
-        return tetromino->data[(side - row - 1) * side + (side - col - 1)];
-    case 3:
-        return tetromino->data[col * side + (side - row - 1)];
-    }
-    return 0;
-}
-
-inline u8
 check_row_filled(const u8* values, s32 width, s32 row)
 {
     for (s32 col = 0;
@@ -177,15 +145,7 @@ merge_piece(Game_State* game)
     }
 }
 
-inline s32
-random_int(s32 min, s32 max)
-{
-    s32 range = max - min;
-    return min + rand() % range;
-}
-
-inline f32
-get_time_to_next_drop(s32 level)
+inline f32 get_time_to_next_drop(s32 level)
 {
     if (level > 29)
     {
@@ -194,16 +154,11 @@ get_time_to_next_drop(s32 level)
     return FRAMES_PER_DROP[level] * TARGET_SECONDS_PER_FRAME;
 }
 
-
-void
-spawn_piece(Game_State* game)
+void spawn_piece(Game_State* game)
 {
-    game->piece = {};
-    game->piece.tetromino_index = (u8)random_int(0, ARRAY_COUNT(TETROMINOES));
-    game->piece.offset_pos.col = WIDTH / 2;
+    generate_piece(game->piece);
     game->timer.next_drop_time = game->timer.time + get_time_to_next_drop(game->play_score.level);
 }
-
 
 inline bool
 soft_drop(Game_State* game)

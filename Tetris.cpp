@@ -1,4 +1,6 @@
 #include "include.h"
+#include "Input_Data.h"
+#include "Input_State.h"
 
 int main(int argc, char* argv[])
 {
@@ -34,8 +36,9 @@ int main(int argc, char* argv[])
 
     Game_State* game = new Game_State();
 
+    Input_Data* this_input = new Input_Data();
+    Input_Data* prev_input = new Input_Data();
     Input_State* input = new Input_State();
-    Input_State* prev_input = new Input_State();
 
 
     srand((u32)time(0));
@@ -65,27 +68,8 @@ int main(int argc, char* argv[])
             }
         }
 
-        s32 key_count;
-        const u8* key_states = SDL_GetKeyboardState(&key_count);
-
-        if (key_states[SDL_SCANCODE_ESCAPE])
-        {
-            quit = true;
-        }
-
-        *prev_input = *input;
-
-        input->left = key_states[SDL_SCANCODE_LEFT];
-        input->right = key_states[SDL_SCANCODE_RIGHT];
-        input->up = key_states[SDL_SCANCODE_UP];
-        input->down = key_states[SDL_SCANCODE_DOWN];
-        input->a = key_states[SDL_SCANCODE_SPACE];
-
-        input->dleft = input->left - prev_input->left;
-        input->dright = input->right - prev_input->right;
-        input->dup = input->up - prev_input->up;
-        input->ddown = input->down - prev_input->down;
-        input->da = input->a - prev_input->a;
+        *input = get_input(prev_input, this_input);
+        quit = input->quit;
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
         SDL_RenderClear(renderer);
@@ -97,7 +81,7 @@ int main(int argc, char* argv[])
     }
 
     delete prev_input;
-    delete input;
+    delete this_input;
     delete game;
 
     Mix_CloseAudio();

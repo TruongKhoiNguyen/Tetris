@@ -4,8 +4,6 @@
 
 const s32 GRID_SIZE = 30;
 
-#define ARRAY_COUNT(x) (sizeof(x) / sizeof((x)[0]))
-
 const u8 FRAMES_PER_DROP[] = {
     48,
     43,
@@ -40,21 +38,6 @@ const u8 FRAMES_PER_DROP[] = {
 };
 
 const f32 TARGET_SECONDS_PER_FRAME = 1.f / 60.f;
-
-struct Input_State
-{
-    u8 left;
-    u8 right;
-    u8 up;
-    u8 down;
-    u8 a;
-
-    s8 dleft;
-    s8 dright;
-    s8 dup;
-    s8 ddown;
-    s8 da;
-};
 
 enum class Text_Align
 {

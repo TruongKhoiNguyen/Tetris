@@ -7,6 +7,8 @@
 #include "structures.h"
 #include "core.h"
 #include "colors.h"
+#include "Tetromino.h"
+#include "Input_State.h"
 
 void render_game(const Game_State* game,
     SDL_Renderer* renderer,
