@@ -152,9 +152,9 @@
     <ClInclude Include="core.h" />
     <ClInclude Include="data_type.h" />
     <ClInclude Include="game_renderer.h" />
-    <ClInclude Include="game_start.h" />
     <ClInclude Include="include.h" />
     <ClInclude Include="structures.h" />
+    <ClInclude Include="Tetromino.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Components.txt" />

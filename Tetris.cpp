@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
     TTF_Font* font = TTF_OpenFont(font_name, 16);
 
     Game_State* game = new Game_State();
+
     Input_State* input = new Input_State();
     Input_State* prev_input = new Input_State();
 

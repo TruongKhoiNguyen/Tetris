@@ -59,7 +59,7 @@
     <ClInclude Include="game_renderer.h">
       <Filter>Header Files\Game_Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="game_start.h">
+    <ClInclude Include="Tetromino.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
