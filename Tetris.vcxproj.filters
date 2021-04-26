@@ -13,16 +13,22 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Core">
+      <UniqueIdentifier>{549ae725-bb1d-4b9b-a4de-e75c5a41f6a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game_Renderer">
+      <UniqueIdentifier>{d98c1548-36f0-4ecd-b9bf-3758c10b221d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tetris.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="core.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
     <ClCompile Include="game_renderer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Game_Renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

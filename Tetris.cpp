@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 
     game->piece.tetromino_index = 2;
 
-    Mix_Music* music = Mix_LoadMUS("Soviet_anthem.mp3");
+    Mix_Music* music = Mix_LoadMUS("sound/Korobeiniki.mp3");
     if (music == NULL)
     {
         printf("%s", Mix_GetError());

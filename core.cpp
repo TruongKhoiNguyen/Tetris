@@ -253,7 +253,7 @@ inline s32
 get_lines_for_next_level(s32 start_level, s32 level)
 {
     s32 first_level_up_limit = min(
-        (start_level * 10 + 10),
+        (start_level * 10 + 10),    
         max(100, (start_level * 10 - 50)));
     if (level == start_level)
     {
