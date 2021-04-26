@@ -1,6 +1,5 @@
 #pragma once
 #include "Tetromino.h"
-#include "Game_State.h"
 
 const s32 GRID_SIZE = 30;
 
@@ -38,10 +37,3 @@ const u8 FRAMES_PER_DROP[] = {
 };
 
 const f32 TARGET_SECONDS_PER_FRAME = 1.f / 60.f;
-
-enum class Text_Align
-{
-    TEXT_ALIGN_LEFT,
-    TEXT_ALIGN_CENTER,
-    TEXT_ALIGN_RIGHT
-};

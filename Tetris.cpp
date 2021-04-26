@@ -1,6 +1,7 @@
 #include "include.h"
 #include "Input_Data.h"
 #include "Input_State.h"
+#include "Font.h"
 
 int main(int argc, char* argv[])
 {
@@ -13,6 +14,8 @@ int main(int argc, char* argv[])
     {
         return 2;
     }
+
+    font_init();
 
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1)
     {
@@ -31,8 +34,7 @@ int main(int argc, char* argv[])
         -1,
         SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-    const char* font_name = "PressStart2P-vaV7.ttf";
-    TTF_Font* font = TTF_OpenFont(font_name, 16);
+    Font* font = load_font();
 
     Game_State* game = new Game_State();
 

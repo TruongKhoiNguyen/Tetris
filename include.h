@@ -14,6 +14,6 @@
 #include "data_type.h"
 
 #include "colors.h"
-#include "structures.h"
+#include "Game_Speed.h"
 #include "core.h"
 #include "game_renderer.h"

@@ -51,12 +51,12 @@
     <ClCompile Include="Piece_State.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>Source Files\Game_Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="structures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="data_type.h">
@@ -97,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="Input_State.h">
       <Filter>Header Files\Peripherals\Game_Input_Scanner</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Speed.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Header Files\Peripherals\Game_Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
