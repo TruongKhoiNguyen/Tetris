@@ -151,11 +151,16 @@
     <ClInclude Include="colors.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="data_type.h" />
+    <ClInclude Include="Game_Phase.h" />
     <ClInclude Include="game_renderer.h" />
+    <ClInclude Include="Game_State.h" />
     <ClInclude Include="include.h" />
+    <ClInclude Include="Piece_State.h" />
+    <ClInclude Include="Play_Score.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="structures.h" />
     <ClInclude Include="Tetromino.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Components.txt" />

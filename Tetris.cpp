@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
     bool quit = false;
     while (!quit)
     {
-        game->time = SDL_GetTicks() / 1000.0f;
+        game->timer.time = SDL_GetTicks() / 1000.0f;
 
         SDL_Event e;
         while (SDL_PollEvent(&e) != 0)

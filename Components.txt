@@ -16,11 +16,22 @@ Piece
 - Rotation
 - Position
 
+Achievements
+- Level
+- Line Count
+- Points
+
+Timer
+- Next_drop_time: f32
+- Hightlight_end_time: f32
+- Time: f32
+
 Game Information
 - Achievements
 - Board
 - Phase
 - Playing piece
+- Timer
 
 Input information
 - This input
@@ -29,12 +40,6 @@ Input information
 Keyboard input
 - Prev input information
 - This input
-
-Display information
-- Board
-- Piece
-- Phase
-- Achievement
 
 Font
 - Font name

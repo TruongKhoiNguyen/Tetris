@@ -201,7 +201,7 @@ spawn_piece(Game_State* game)
     game->piece = {};
     game->piece.tetromino_index = (u8)random_int(0, ARRAY_COUNT(TETROMINOES));
     game->piece.offset_pos.col = WIDTH / 2;
-    game->next_drop_time = game->time + get_time_to_next_drop(game->level);
+    game->timer.next_drop_time = game->timer.time + get_time_to_next_drop(game->play_score.level);
 }
 
 
@@ -217,7 +217,7 @@ soft_drop(Game_State* game)
         return false;
     }
 
-    game->next_drop_time = game->time + get_time_to_next_drop(game->level);
+    game->timer.next_drop_time = game->timer.time + get_time_to_next_drop(game->play_score.level);
     return true;
 }
 
@@ -279,9 +279,9 @@ update_game_start(Game_State* game, const Input_State* input)
     if (input->da > 0)
     {
         memset(game->board, 0, WIDTH * HEIGHT);
-        game->level = game->start_level;
-        game->line_count = 0;
-        game->points = 0;
+        game->play_score.level = game->start_level;
+        game->play_score.line_count = 0;
+        game->play_score.points = 0;
         spawn_piece(game);
         game->phase = Game_Phase::GAME_PHASE_PLAY;
     }
@@ -299,17 +299,17 @@ update_game_gameover(Game_State* game, const Input_State* input)
 void
 update_game_line(Game_State* game)
 {
-    if (game->time >= game->highlight_end_time)
+    if (game->timer.time >= game->timer.highlight_end_time)
     {
         clear_lines(game->board, WIDTH, HEIGHT, game->lines);
-        game->line_count += game->pending_line_count;
-        game->points += compute_points(game->level, game->pending_line_count);
+        game->play_score.line_count += game->pending_line_count;
+        game->play_score.points += compute_points(game->play_score.level, game->pending_line_count);
 
         s32 lines_for_next_level = get_lines_for_next_level(game->start_level,
-            game->level);
-        if (game->line_count >= lines_for_next_level)
+            game->play_score.level);
+        if (game->play_score.line_count >= lines_for_next_level)
         {
-            ++game->level;
+            ++game->play_score.level;
         }
 
         game->phase = Game_Phase::GAME_PHASE_PLAY;
@@ -349,7 +349,7 @@ update_game_play(Game_State* game,
         while (soft_drop(game));
     }
 
-    while (game->time >= game->next_drop_time)
+    while (game->timer.time >= game->timer.next_drop_time)
     {
         soft_drop(game);
     }
@@ -358,7 +358,7 @@ update_game_play(Game_State* game,
     if (game->pending_line_count > 0)
     {
         game->phase = Game_Phase::GAME_PHASE_LINE;
-        game->highlight_end_time = game->time + 0.5f;
+        game->timer.highlight_end_time = game->timer.time + 0.5f;
     }
 
     s32 game_over_row = 0;

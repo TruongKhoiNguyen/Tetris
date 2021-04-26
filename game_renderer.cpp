@@ -214,12 +214,12 @@ render_game(const Game_State* game,
         color(0x00, 0x00, 0x00, 0x00));
 
 
-    snprintf(buffer, sizeof(buffer), "LEVEL: %d", game->level);
+    snprintf(buffer, sizeof(buffer), "LEVEL: %d", game->play_score.level);
     draw_string(renderer, font, buffer, 5, 5, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
 
-    snprintf(buffer, sizeof(buffer), "LINES: %d", game->line_count);
+    snprintf(buffer, sizeof(buffer), "LINES: %d", game->play_score.line_count);
     draw_string(renderer, font, buffer, 5, 35, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
 
-    snprintf(buffer, sizeof(buffer), "POINTS: %d", game->points);
+    snprintf(buffer, sizeof(buffer), "POINTS: %d", game->play_score.points);
     draw_string(renderer, font, buffer, 5, 65, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
 }
