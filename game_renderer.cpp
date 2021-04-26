@@ -109,8 +109,8 @@ draw_piece(SDL_Renderer* renderer,
             if (value)
             {
                 draw_cell(renderer,
-                    row + piece->offset_row,
-                    col + piece->offset_col,
+                    row + piece->offset_pos.row,
+                    col + piece->offset_pos.col,
                     value,
                     offset_x, offset_y,
                     outline);
@@ -165,9 +165,9 @@ render_game(const Game_State* game,
         Piece_State piece = game->piece;
         while (check_piece_valid(&piece, game->board, WIDTH, HEIGHT))
         {
-            piece.offset_row++;
+            piece.offset_pos.row++;
         }
-        --piece.offset_row;
+        --piece.offset_pos.row;
 
         draw_piece(renderer, &piece, 0, margin_y, true);
 

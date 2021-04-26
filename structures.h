@@ -1,5 +1,6 @@
 #pragma once
 #include "Tetromino.h"
+#include "Position.h"
 
 const int WIDTH = 10;
 const int HEIGHT = 22;
@@ -54,8 +55,7 @@ enum class Game_Phase
 struct Piece_State
 {
     u8 tetromino_index;
-    s32 offset_row;
-    s32 offset_col;
+    Position offset_pos;
     s32 rotation;
 };
 

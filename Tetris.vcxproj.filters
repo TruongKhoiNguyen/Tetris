@@ -62,6 +62,9 @@
     <ClInclude Include="Tetromino.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="User_Story.txt">

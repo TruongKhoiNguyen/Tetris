@@ -153,6 +153,7 @@
     <ClInclude Include="data_type.h" />
     <ClInclude Include="game_renderer.h" />
     <ClInclude Include="include.h" />
+    <ClInclude Include="Position.h" />
     <ClInclude Include="structures.h" />
     <ClInclude Include="Tetromino.h" />
   </ItemGroup>

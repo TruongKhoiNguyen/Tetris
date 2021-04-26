@@ -126,8 +126,8 @@ check_piece_valid(const Piece_State* piece,
             u8 value = tetromino_get(tetromino, row, col, piece->rotation);
             if (value > 0)
             {
-                s32 board_row = piece->offset_row + row;
-                s32 board_col = piece->offset_col + col;
+                s32 board_row = piece->offset_pos.row + row;
+                s32 board_col = piece->offset_pos.col + col;
                 if (board_row < 0)
                 {
                     return false;
@@ -169,8 +169,8 @@ merge_piece(Game_State* game)
             u8 value = tetromino_get(tetromino, row, col, game->piece.rotation);
             if (value)
             {
-                s32 board_row = game->piece.offset_row + row;
-                s32 board_col = game->piece.offset_col + col;
+                s32 board_row = game->piece.offset_pos.row + row;
+                s32 board_col = game->piece.offset_pos.col + col;
                 matrix_set(game->board, WIDTH, board_row, board_col, value);
             }
         }
@@ -200,7 +200,7 @@ spawn_piece(Game_State* game)
 {
     game->piece = {};
     game->piece.tetromino_index = (u8)random_int(0, ARRAY_COUNT(TETROMINOES));
-    game->piece.offset_col = WIDTH / 2;
+    game->piece.offset_pos.col = WIDTH / 2;
     game->next_drop_time = game->time + get_time_to_next_drop(game->level);
 }
 
@@ -208,10 +208,10 @@ spawn_piece(Game_State* game)
 inline bool
 soft_drop(Game_State* game)
 {
-    ++game->piece.offset_row;
+    ++game->piece.offset_pos.row;
     if (!check_piece_valid(&game->piece, game->board, WIDTH, HEIGHT))
     {
-        --game->piece.offset_row;
+        --game->piece.offset_pos.row;
         merge_piece(game);
         spawn_piece(game);
         return false;
@@ -323,11 +323,11 @@ update_game_play(Game_State* game,
     Piece_State piece = game->piece;
     if (input->dleft > 0)
     {
-        --piece.offset_col;
+        --piece.offset_pos.col;
     }
     if (input->dright > 0)
     {
-        ++piece.offset_col;
+        ++piece.offset_pos.col;
     }
     if (input->dup > 0)
     {
