@@ -1,0 +1,27 @@
+As
+a Player
+I want to 
+set start level
+So
+I don't need to start at slow level
+
+As
+a Player
+I want to
+look my scores
+So
+I can know how good a player i am
+
+As
+a Player
+I want to
+have music and sound effect in the game
+So
+For fun
+
+As
+a Player
+I want to 
+limit my framerate to 60 fps
+So
+i don't burn up my computer

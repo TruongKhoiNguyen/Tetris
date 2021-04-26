@@ -1,6 +1,7 @@
 #pragma once
 
 #include "structures.h"
+#include "game_start.h"
 
 inline u8 matrix_get(const u8* values, s32 width, s32 row, s32 col);
 

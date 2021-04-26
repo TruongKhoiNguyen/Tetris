@@ -19,6 +19,15 @@
     <Filter Include="Source Files\Game_Renderer">
       <UniqueIdentifier>{d98c1548-36f0-4ecd-b9bf-3758c10b221d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Core">
+      <UniqueIdentifier>{52d707b9-9c4f-4f01-9286-b2c265db9ecd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game_Renderer">
+      <UniqueIdentifier>{6e62e4f4-042a-4929-b875-5e3432cf5eec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Documentations">
+      <UniqueIdentifier>{25892335-3b6f-4257-be66-7c0755337be2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tetris.cpp">
@@ -32,23 +41,34 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="colors.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="structures.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="game_renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="data_type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="colors.h">
+      <Filter>Header Files\Game_Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="core.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="game_renderer.h">
+      <Filter>Header Files\Game_Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="game_start.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="User_Story.txt">
+      <Filter>Documentations</Filter>
+    </Text>
+    <Text Include="Components.txt">
+      <Filter>Documentations</Filter>
+    </Text>
   </ItemGroup>
 </Project>
