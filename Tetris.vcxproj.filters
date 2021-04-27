@@ -42,7 +42,7 @@
     <ClCompile Include="core.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="game_renderer.cpp">
+    <ClCompile Include="Game_Renderer.cpp">
       <Filter>Source Files\Game_Renderer</Filter>
     </ClCompile>
     <ClCompile Include="Tetromino.cpp">
@@ -60,6 +60,9 @@
     <ClCompile Include="Game_Mechanics.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Source Files\Game_Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include.h">
@@ -71,10 +74,10 @@
     <ClInclude Include="colors.h">
       <Filter>Header Files\Peripherals\Game_Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="core.h">
+    <ClInclude Include="Core.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="game_renderer.h">
+    <ClInclude Include="Game_Renderer.h">
       <Filter>Header Files\Peripherals\Game_Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Tetromino.h">
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="Game_Mechanics.h">
       <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Header Files\Peripherals\Game_Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

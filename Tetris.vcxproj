@@ -147,20 +147,21 @@
     <ClCompile Include="core.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Game_Mechanics.cpp" />
-    <ClCompile Include="game_renderer.cpp" />
+    <ClCompile Include="Game_Renderer.cpp" />
     <ClCompile Include="Piece_State.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Tetris.cpp" />
     <ClCompile Include="Tetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h" />
     <ClInclude Include="Condition_checker.h" />
-    <ClInclude Include="core.h" />
+    <ClInclude Include="Core.h" />
     <ClInclude Include="data_type.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="Game_Mechanics.h" />
     <ClInclude Include="Game_Phase.h" />
-    <ClInclude Include="game_renderer.h" />
+    <ClInclude Include="Game_Renderer.h" />
     <ClInclude Include="Game_State.h" />
     <ClInclude Include="Game_State_Calculator.h" />
     <ClInclude Include="include.h" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Play_Score.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Game_Speed.h" />
+    <ClInclude Include="Sound.h" />
     <ClInclude Include="Tetromino.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>

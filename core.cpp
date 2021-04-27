@@ -1,4 +1,4 @@
-#include "include.h"
+#include "core.h"
 
 void
 update_game_start(Game_State* game, const Input_State* input)

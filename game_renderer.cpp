@@ -1,4 +1,4 @@
-#include "game_renderer.h"
+#include "Game_Renderer.h"
 
 void
 fill_rect(SDL_Renderer* renderer,

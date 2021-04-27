@@ -2,6 +2,7 @@
 #include "Input_Data.h"
 #include "Input_State.h"
 #include "Font.h"
+#include "Sound.h"
 
 int main(int argc, char* argv[])
 {
@@ -10,17 +11,10 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    if (TTF_Init() < 0)
-    {
-        return 2;
-    }
-
     font_init();
 
-    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1)
-    {
-        printf("%s", Mix_GetError());
-    }
+    init_sound();
+    Music* mus = load_bgmusic();
 
     SDL_Window* window = SDL_CreateWindow(
         "Tetris",
@@ -49,12 +43,7 @@ int main(int argc, char* argv[])
 
     game->piece.tetromino_index = 2;
 
-    Mix_Music* music = Mix_LoadMUS("sound/Korobeiniki.mp3");
-    if (music == NULL)
-    {
-        printf("%s", Mix_GetError());
-    }
-    Mix_PlayMusic(music, -1);
+    play_bgmusic(mus);
 
     bool quit = false;
     while (!quit)
@@ -71,7 +60,10 @@ int main(int argc, char* argv[])
         }
 
         *input = get_input(prev_input, this_input);
-        quit = input->quit;
+        if (input->quit)
+        {
+            quit = true;
+        }
 
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
         SDL_RenderClear(renderer);
@@ -86,7 +78,7 @@ int main(int argc, char* argv[])
     delete this_input;
     delete game;
 
-    Mix_CloseAudio();
+    quit_mix();
     close_font(font);
     exit_ttf();
     SDL_DestroyRenderer(renderer);

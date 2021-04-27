@@ -6,12 +6,14 @@
 
 #include "data_type.h"
 #include "Game_Speed.h"
-#include "core.h"
+#include "Core.h"
 #include "colors.h"
 #include "Tetromino.h"
 #include "Game_State.h"
 #include "Font.h"
 
+typedef SDL_Window Window;
+typedef SDL_Renderer Renderer;
 
 const s32 GRID_SIZE = 30;
 

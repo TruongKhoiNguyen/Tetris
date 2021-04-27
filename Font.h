@@ -7,8 +7,8 @@
 #include "data_type.h"
 #include "colors.h"
 
-const char FONT_NAME[] = "font/PressStart2P-vaV7.ttf";
-const s32 FONT_SIZE = 16;
+const char FONT_NAME[] = "font/soviet-bold-expanded.ttf";
+const s32 FONT_SIZE = 26;
 
 typedef TTF_Font Font;
 
