@@ -27,6 +27,16 @@ inline void font_init()
     }
 }
 
+inline void close_font(Font* font)
+{
+    TTF_CloseFont(font);
+}
+
+inline void exit_ttf()
+{
+    TTF_Quit();
+}
+
 inline Font* load_font()
 {
 	return TTF_OpenFont(FONT_NAME, FONT_SIZE);

@@ -87,7 +87,8 @@ int main(int argc, char* argv[])
     delete game;
 
     Mix_CloseAudio();
-    TTF_CloseFont(font);
+    close_font(font);
+    exit_ttf();
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
 

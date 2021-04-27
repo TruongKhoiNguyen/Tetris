@@ -1,8 +1,6 @@
 #pragma once
 #include "Tetromino.h"
 
-const s32 GRID_SIZE = 30;
-
 const u8 FRAMES_PER_DROP[] = {
     48,
     43,

@@ -54,6 +54,12 @@
     <ClCompile Include="Font.cpp">
       <Filter>Source Files\Game_Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="Condition_Checker.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_Mechanics.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include.h">
@@ -103,6 +109,15 @@
     </ClInclude>
     <ClInclude Include="Font.h">
       <Filter>Header Files\Peripherals\Game_Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Condition_checker.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_State_Calculator.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_Mechanics.h">
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

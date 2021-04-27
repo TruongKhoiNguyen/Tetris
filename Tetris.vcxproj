@@ -143,8 +143,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Condition_Checker.cpp" />
     <ClCompile Include="core.cpp" />
     <ClCompile Include="Font.cpp" />
+    <ClCompile Include="Game_Mechanics.cpp" />
     <ClCompile Include="game_renderer.cpp" />
     <ClCompile Include="Piece_State.cpp" />
     <ClCompile Include="Tetris.cpp" />
@@ -152,12 +154,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h" />
+    <ClInclude Include="Condition_checker.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="data_type.h" />
     <ClInclude Include="Font.h" />
+    <ClInclude Include="Game_Mechanics.h" />
     <ClInclude Include="Game_Phase.h" />
     <ClInclude Include="game_renderer.h" />
     <ClInclude Include="Game_State.h" />
+    <ClInclude Include="Game_State_Calculator.h" />
     <ClInclude Include="include.h" />
     <ClInclude Include="Input_Data.h" />
     <ClInclude Include="Input_State.h" />

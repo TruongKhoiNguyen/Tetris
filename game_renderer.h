@@ -12,6 +12,9 @@
 #include "Game_State.h"
 #include "Font.h"
 
+
+const s32 GRID_SIZE = 30;
+
 void render_game(const Game_State* game,
     SDL_Renderer* renderer,
     TTF_Font* font);
