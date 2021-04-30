@@ -12,9 +12,11 @@ int main(int argc, char* argv[])
     }
 
     font_init();
+    Font* font = load_font();
 
     init_sound();
     Music* mus = load_bgmusic();
+    Sound_Effect sound_effect = load_sound_effect();
 
     SDL_Window* window = SDL_CreateWindow(
         "Tetris",
@@ -28,23 +30,15 @@ int main(int argc, char* argv[])
         -1,
         SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-    Font* font = load_font();
-
     Game_State* game = new Game_State();
-
     Input_Data* this_input = new Input_Data();
     Input_Data* prev_input = new Input_Data();
     Input_State* input = new Input_State();
 
-
     srand((u32)time(0));
-
     spawn_piece(game);
 
-    game->piece.tetromino_index = 2;
-
     play_bgmusic(mus);
-
     bool quit = false;
     while (!quit)
     {

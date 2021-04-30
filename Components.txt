@@ -1,69 +1,19 @@
-Play board
-- Board: u8
-- Width: s32
-- Height: s32
+Input Information
+	Direction
+	A button
+	Exit
 
-Type of piece
-- Size
-- Appearance
+Output Information
+	Board
+	Piece
+	Score
+	Phase
 
-Position
-- Offset_x
-- Offset_y
+UI
+	Init UI
+	Get Input: Input information
+	Render: Screen
 
-Piece
-- Type of piece
-- Rotation
-- Position
-
-Achievements
-- Level
-- Line Count
-- Points
-
-Timer
-- Next_drop_time: f32
-- Hightlight_end_time: f32
-- Time: f32
-
-Game Information
-- Achievements
-- Board
-- Phase
-- Playing piece
-- Timer
-
-Input information
-- This input
-- Difference between previous input
-
-Keyboard input
-- Prev input information
-- This input
-
-Font
-- Font name
-- Font size
-
-Text displayer
-- Font
-- Content
-- Alignment
-
-Speaker info
-- Frequency
-- Channels
-- Chunksize
-
-Sound
-- Speaker info
-- Sound name
-- Channels
-- Loops
-- Duration
-
-SDL Display
-- Framerate
-- Display information
-- Text displayer
-- Sound player
+Core Processor
+	Update game: Output Information
+	Is_Quit: bool

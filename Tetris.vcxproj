@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="Condition_Checker.cpp" />
     <ClCompile Include="core.cpp" />
+    <ClCompile Include="Draw_Func.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="Game_Mechanics.cpp" />
     <ClCompile Include="Game_Renderer.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Condition_checker.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="data_type.h" />
+    <ClInclude Include="Draw_Func.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="Game_Mechanics.h" />
     <ClInclude Include="Game_Phase.h" />
@@ -177,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Components.txt" />
+    <Text Include="Renderer_Components.txt" />
+    <Text Include="To-do_list.txt" />
+    <Text Include="UI_Components.txt" />
     <Text Include="User_Story.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

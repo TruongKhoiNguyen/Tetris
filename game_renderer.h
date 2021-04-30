@@ -11,6 +11,7 @@
 #include "Tetromino.h"
 #include "Game_State.h"
 #include "Font.h"
+#include "Draw_Func.h"
 
 typedef SDL_Window Window;
 typedef SDL_Renderer Renderer;

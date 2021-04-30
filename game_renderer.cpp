@@ -1,33 +1,6 @@
 #include "Game_Renderer.h"
 
 void
-fill_rect(SDL_Renderer* renderer,
-    s32 x, s32 y, s32 width, s32 height, Color color)
-{
-    SDL_Rect rect = {};
-    rect.x = x;
-    rect.y = y;
-    rect.w = width;
-    rect.h = height;
-    SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
-    SDL_RenderFillRect(renderer, &rect);
-}
-
-
-void
-draw_rect(SDL_Renderer* renderer,
-    s32 x, s32 y, s32 width, s32 height, Color color)
-{
-    SDL_Rect rect = {};
-    rect.x = x;
-    rect.y = y;
-    rect.w = width;
-    rect.h = height;
-    SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
-    SDL_RenderDrawRect(renderer, &rect);
-}
-
-void
 draw_cell(SDL_Renderer* renderer,
     s32 row, s32 col, u8 value,
     s32 offset_x, s32 offset_y,
@@ -117,9 +90,7 @@ render_game(const Game_State* game,
 {
 
     char buffer[4096];
-
     Color highlight_color = color(0xFF, 0xFF, 0xFF, 0xFF);
-
     s32 margin_y = 60;
 
     draw_board(renderer, game->board, WIDTH, HEIGHT, 0, margin_y);

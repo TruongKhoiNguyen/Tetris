@@ -63,6 +63,9 @@
     <ClCompile Include="Sound.cpp">
       <Filter>Source Files\Game_Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="Draw_Func.cpp">
+      <Filter>Source Files\Game_Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include.h">
@@ -125,12 +128,24 @@
     <ClInclude Include="Sound.h">
       <Filter>Header Files\Peripherals\Game_Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="Draw_Func.h">
+      <Filter>Header Files\Peripherals\Game_Renderer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="User_Story.txt">
       <Filter>Documentations</Filter>
     </Text>
     <Text Include="Components.txt">
+      <Filter>Documentations</Filter>
+    </Text>
+    <Text Include="To-do_list.txt">
+      <Filter>Documentations</Filter>
+    </Text>
+    <Text Include="Renderer_Components.txt">
+      <Filter>Documentations</Filter>
+    </Text>
+    <Text Include="UI_Components.txt">
       <Filter>Documentations</Filter>
     </Text>
   </ItemGroup>
