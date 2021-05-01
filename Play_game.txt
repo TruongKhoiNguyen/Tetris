@@ -1,0 +1,26 @@
+1. Description
+2. Actors
+3. Pre-condition
+4. Post-condition
+5. Paths
+	5.1. Main success path
+		5.1.1. Actors actions
+			- Player uses LEFT RIGHT key to move piece
+			- Player uses UP key to rotate piece
+			- Player uses DOWN key to accelerate falling velocity of piece
+			- Player uses SPACEBAR key to hard drop piece
+		5.1.2. System responses
+			- Change position of piece horizontally and display it
+			- rotate piece clockwise and display it
+			- Increase falling velocity
+			- Set piece to its position and generate new piece.
+	5.2. Alternate path
+		5.2.1. Actors actions
+			- Player uses other keys on keyboard except esc and all the keys mentioned in main success path
+		5.2.2. Systems responses
+			- No response
+	5.3. Exception path
+		5.3.1. Actors actions
+			- Player presses esc key
+		5.3.2. System responses
+			- Quit games

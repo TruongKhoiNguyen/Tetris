@@ -19,6 +19,13 @@ have music and sound effect in the game
 So
 For fun
 
+As 
+a Player
+I want to 
+limit memory used below 60 Mbs
+So
+I can run it on less powerful hardware
+
 As
 a Player
 I want to 

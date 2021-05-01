@@ -1,0 +1,24 @@
+1. Description
+	Choose a start level and start game
+2. Actors
+	2.1.Player
+	2.2 Game
+3. Pre-condition
+4. Post-condition
+	Get into main gameplay
+5. Paths
+	5.1. Main success path
+		5.1.1. Actors actions
+			- Player press UP key and DOWN key to choose start level
+		5.1.2. System responses
+			- Update start level and display it
+	5.2. Alternate path
+		5.2.1. Actors actions
+			- Player choose other key than spacebar and esc key and up and down key
+		5.2.2. System responses
+			- No response
+	5.3. Exception path
+		5.3.1. Actors actions
+			- Player choose esc key
+		5.3.2. System responses
+			- Quit game

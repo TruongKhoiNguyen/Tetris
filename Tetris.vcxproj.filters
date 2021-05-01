@@ -34,6 +34,9 @@
     <Filter Include="Header Files\Peripherals\Game_Input_Scanner">
       <UniqueIdentifier>{bd775560-102b-4981-b657-78af8e2769a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Documentations\Use cases">
+      <UniqueIdentifier>{81b523ac-9d9c-409f-899b-578bc0c67613}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tetris.cpp">
@@ -147,6 +150,12 @@
     </Text>
     <Text Include="UI_Components.txt">
       <Filter>Documentations</Filter>
+    </Text>
+    <Text Include="Using_start_screen.txt">
+      <Filter>Documentations\Use cases</Filter>
+    </Text>
+    <Text Include="Play_game.txt">
+      <Filter>Documentations\Use cases</Filter>
     </Text>
   </ItemGroup>
 </Project>
