@@ -178,11 +178,8 @@
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Components.txt" />
+    <Text Include="Main_Components.txt" />
     <Text Include="Play_game.txt" />
-    <Text Include="Renderer_Components.txt" />
-    <Text Include="To-do_list.txt" />
-    <Text Include="UI_Components.txt" />
     <Text Include="User_Story.txt" />
     <Text Include="Using_start_screen.txt" />
   </ItemGroup>

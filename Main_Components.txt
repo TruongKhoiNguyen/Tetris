@@ -1,0 +1,17 @@
+Actor
+- Main program
+	- main(): int
+- UI
+	- get_input(input, input_raw_data): void
+	- render(render_information): void
+- Core
+	- is_quit(): bool
+	- update_game_play(input, render_inforamtion): void 
+
+Sequence
+- Main program init UI
+- Main program init game core
+- Main program start loop and check game quit
+- Main program get input
+- Main program pass input information to game core
+- Main program invoke renderer

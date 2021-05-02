@@ -37,6 +37,9 @@
     <Filter Include="Documentations\Use cases">
       <UniqueIdentifier>{81b523ac-9d9c-409f-899b-578bc0c67613}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Documentations\Components">
+      <UniqueIdentifier>{1488ef82-2872-4d10-9349-f48eff32603f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tetris.cpp">
@@ -139,23 +142,14 @@
     <Text Include="User_Story.txt">
       <Filter>Documentations</Filter>
     </Text>
-    <Text Include="Components.txt">
-      <Filter>Documentations</Filter>
-    </Text>
-    <Text Include="To-do_list.txt">
-      <Filter>Documentations</Filter>
-    </Text>
-    <Text Include="Renderer_Components.txt">
-      <Filter>Documentations</Filter>
-    </Text>
-    <Text Include="UI_Components.txt">
-      <Filter>Documentations</Filter>
-    </Text>
     <Text Include="Using_start_screen.txt">
       <Filter>Documentations\Use cases</Filter>
     </Text>
     <Text Include="Play_game.txt">
       <Filter>Documentations\Use cases</Filter>
+    </Text>
+    <Text Include="Main_Components.txt">
+      <Filter>Documentations\Components</Filter>
     </Text>
   </ItemGroup>
 </Project>
