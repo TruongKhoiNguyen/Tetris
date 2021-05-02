@@ -1,4 +1,5 @@
-#pragma once
+#ifndef UI_VIEW_COLORS_H
+#define UI_VIEW_COLORS_H
 
 typedef struct Color
 {
@@ -51,3 +52,5 @@ const Color DARK_COLORS[] = {
     color(0x1E, 0x42, 0x66, 0xFF),
     color(0x66, 0x42, 0x1E, 0xFF)
 };
+
+#endif //UI_VIEW_COLORS_H

@@ -1,7 +1,7 @@
 #ifndef MODEL_GAME_STATE_H
 #define MODEL_GAME_STATE_H
 
-#include "data_type.h"
+#include "Data_Types.h"
 #include "Piece_State.h"
 #include "Game_Phase.h"
 #include "Play_Score.h"

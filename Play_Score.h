@@ -1,7 +1,7 @@
 #ifndef MODEL_PLAY_SCORE_H
 #define MODEL_PLAY_SCORE_H
 
-#include "data_type.h"
+#include "Data_Types.h"
 
 struct Play_Score
 {

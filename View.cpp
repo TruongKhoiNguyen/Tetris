@@ -1,4 +1,4 @@
-#include "Game_Renderer.h"
+#include "View.h"
 
 void
 draw_cell(SDL_Renderer* renderer,
@@ -84,7 +84,7 @@ draw_board(SDL_Renderer* renderer,
 }
 
 void
-render_game(const Game_State* game, Renderer_Data* renderer_data)
+render_game(const Game_State* game, View_Data* renderer_data)
 {
     const Color highlight_color = color(0xFF, 0xFF, 0xFF, 0xFF);
     const s32 margin_y = SCORE_SURFACE_HEIGHT * GRID_SIZE;

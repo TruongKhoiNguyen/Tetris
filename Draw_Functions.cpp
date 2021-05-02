@@ -1,4 +1,4 @@
-#include "Draw_Func.h"
+#include "Draw_Functions.h"
 
 void
 fill_rect(SDL_Renderer* renderer,

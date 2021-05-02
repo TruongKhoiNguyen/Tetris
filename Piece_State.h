@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 
-#include "data_type.h"
+#include "Data_Types.h"
 #include "Position.h"
 #include "Tetromino.h"
 

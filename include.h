@@ -11,9 +11,9 @@
 #include <SDL_ttf.h>
 #include <SDL_mixer.h>
 
-#include "data_type.h"
+#include "Data_Types.h"
 
-#include "colors.h"
+#include "Colors.h"
 #include "Game_Speed.h"
 #include "Model.h"
-#include "Game_Renderer.h"
+#include "View.h"

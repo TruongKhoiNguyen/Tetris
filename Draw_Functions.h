@@ -1,10 +1,10 @@
-#ifndef PERIPHERALS_DRAW_FUNC_H
-#define PERIPHERALS_DRAW_FUNC_H
+#ifndef UI_VIEW_DRAW_FUNCTIONS_H
+#define UI_VIEW_DRAW_FUNCTIONS_H
 
 #include <SDL.h>
 
-#include "data_type.h"
-#include "colors.h"
+#include "Data_Types.h"
+#include "Colors.h"
 
 void fill_rect(SDL_Renderer* renderer,
     s32 x, s32 y, s32 width, s32 height, Color color);
@@ -13,4 +13,4 @@ void fill_rect(SDL_Renderer* renderer,
 void draw_rect(SDL_Renderer* renderer,
     s32 x, s32 y, s32 width, s32 height, Color color);
 
-#endif //PERIPHERALS_DRAW_FUNC_H
+#endif //UI_VIEW_DRAW_FUNCTIONS_H

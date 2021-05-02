@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DATA_TYPE_H
+#define DATA_TYPE_H
 
 #include <cstdint>
 
@@ -10,3 +11,5 @@ typedef int16_t s16;
 typedef int32_t s32;
 typedef float f32;
 typedef double f64;
+
+#endif DATA_TYPE_H

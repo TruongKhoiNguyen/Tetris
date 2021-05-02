@@ -1,7 +1,7 @@
 #ifndef MODEL_GAME_STATE_CALCULATOR
 #define MODEL_GAME_STATE_CALCULATOR
 
-#include "data_type.h"
+#include "Data_Types.h"
 #include "Game_Speed.h"
 
 inline f32 get_time_to_next_drop(s32 level)

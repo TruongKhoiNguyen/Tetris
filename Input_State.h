@@ -3,7 +3,7 @@
 
 #include <SDL.h>
 
-#include "data_type.h"
+#include "Data_Types.h"
 #include "Input_Data.h"
 
 struct Input_State

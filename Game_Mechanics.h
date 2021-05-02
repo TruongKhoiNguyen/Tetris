@@ -3,7 +3,7 @@
 
 #include <cstring>
 
-#include "data_type.h"
+#include "Data_Types.h"
 #include "Game_State.h"
 #include "Condition_Checker.h"
 #include "Game_State_Calculator.h"

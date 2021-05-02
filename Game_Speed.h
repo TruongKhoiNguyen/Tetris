@@ -1,7 +1,7 @@
 #ifndef CORE_GAME_SPEED_H
 #define CORE_GAME_SPEED_H
 
-#include "data_type.h"
+#include "Data_Types.h"
 
 const u8 FRAMES_PER_DROP[] = {
     48,

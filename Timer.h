@@ -1,7 +1,7 @@
 #ifndef MODEL_TIMER_H
 #define MODEL_TIMER_H
 
-#include "data_type.h"
+#include "Data_Types.h"
 
 struct Timer
 {

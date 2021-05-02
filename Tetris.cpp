@@ -7,7 +7,7 @@ int main(int argc, char* argv[])
     const s32 SCREEN_WIDTH = WIDTH * GRID_SIZE;
     const s32 SCREEN_HEIGHT = (HEIGHT + SCORE_SURFACE_HEIGHT) * GRID_SIZE;
 
-    Renderer_Data* renderer_data = new Renderer_Data();
+    View_Data* renderer_data = new View_Data();
 
     init_UI(renderer_data, TITLE, SCREEN_WIDTH, SCREEN_HEIGHT);
 

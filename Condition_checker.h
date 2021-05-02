@@ -3,7 +3,7 @@
 
 #include <cassert>
 
-#include "data_type.h"
+#include "Data_Types.h"
 #include "Piece_State.h"
 #include "Game_State.h"
 

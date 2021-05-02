@@ -40,6 +40,12 @@
     <Filter Include="Source Files\Model">
       <UniqueIdentifier>{549ae725-bb1d-4b9b-a4de-e75c5a41f6a8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\UI\Controller">
+      <UniqueIdentifier>{f1cf1704-2be9-44c3-b7e2-f86bc4cb960a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\View">
+      <UniqueIdentifier>{00bf716c-5ccb-46c2-9a6f-270ffa872d12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tetris.cpp">
@@ -48,17 +54,11 @@
     <ClCompile Include="Model.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
-    <ClCompile Include="Game_Renderer.cpp">
-      <Filter>Source Files\UI</Filter>
-    </ClCompile>
     <ClCompile Include="Tetromino.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
     <ClCompile Include="Piece_State.cpp">
       <Filter>Source Files\Model</Filter>
-    </ClCompile>
-    <ClCompile Include="Text_Displayer.cpp">
-      <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="Condition_Checker.cpp">
       <Filter>Source Files\Model</Filter>
@@ -66,33 +66,39 @@
     <ClCompile Include="Game_Mechanics.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
-    <ClCompile Include="Draw_Func.cpp">
-      <Filter>Source Files\UI</Filter>
-    </ClCompile>
     <ClCompile Include="UI.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer_Data.cpp">
-      <Filter>Source Files\UI</Filter>
+    <ClCompile Include="Draw_Functions.cpp">
+      <Filter>Source Files\UI\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Text_Displayer.cpp">
+      <Filter>Source Files\UI\View</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>Source Files\UI\View</Filter>
+    </ClCompile>
+    <ClCompile Include="View_Data.cpp">
+      <Filter>Source Files\UI\View</Filter>
     </ClCompile>
     <ClCompile Include="Sound.cpp">
-      <Filter>Source Files\UI</Filter>
+      <Filter>Source Files\UI\View</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="data_type.h">
+    <ClInclude Include="Data_Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="colors.h">
+    <ClInclude Include="Colors.h">
       <Filter>Header Files\UI\View</Filter>
     </ClInclude>
     <ClInclude Include="Model.h">
       <Filter>Header Files\Model</Filter>
     </ClInclude>
-    <ClInclude Include="Game_Renderer.h">
+    <ClInclude Include="View.h">
       <Filter>Header Files\UI\View</Filter>
     </ClInclude>
     <ClInclude Include="Tetromino.h">
@@ -140,20 +146,17 @@
     <ClInclude Include="Sound.h">
       <Filter>Header Files\UI\View</Filter>
     </ClInclude>
-    <ClInclude Include="Draw_Func.h">
+    <ClInclude Include="Draw_Functions.h">
       <Filter>Header Files\UI\View</Filter>
     </ClInclude>
     <ClInclude Include="Controller.h">
       <Filter>Header Files\UI\Controller</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer_Data.h">
+    <ClInclude Include="View_Data.h">
       <Filter>Header Files\UI\View</Filter>
     </ClInclude>
     <ClInclude Include="UI.h">
       <Filter>Header Files\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>Header Files\UI\View</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -145,27 +145,27 @@
   <ItemGroup>
     <ClCompile Include="Condition_Checker.cpp" />
     <ClCompile Include="Model.cpp" />
-    <ClCompile Include="Draw_Func.cpp" />
+    <ClCompile Include="Draw_Functions.cpp" />
     <ClCompile Include="Text_Displayer.cpp" />
     <ClCompile Include="Game_Mechanics.cpp" />
-    <ClCompile Include="Game_Renderer.cpp" />
+    <ClCompile Include="View.cpp" />
     <ClCompile Include="Piece_State.cpp" />
-    <ClCompile Include="Renderer_Data.cpp" />
+    <ClCompile Include="View_Data.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Tetris.cpp" />
     <ClCompile Include="Tetromino.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="colors.h" />
+    <ClInclude Include="Colors.h" />
     <ClInclude Include="Condition_Checker.h" />
     <ClInclude Include="Model.h" />
-    <ClInclude Include="data_type.h" />
-    <ClInclude Include="Draw_Func.h" />
+    <ClInclude Include="Data_Types.h" />
+    <ClInclude Include="Draw_Functions.h" />
     <ClInclude Include="Text_Displayer.h" />
     <ClInclude Include="Game_Mechanics.h" />
     <ClInclude Include="Game_Phase.h" />
-    <ClInclude Include="Game_Renderer.h" />
+    <ClInclude Include="View.h" />
     <ClInclude Include="Game_State.h" />
     <ClInclude Include="Game_State_Calculator.h" />
     <ClInclude Include="include.h" />
@@ -176,8 +176,7 @@
     <ClInclude Include="Play_Score.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Game_Speed.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="Renderer_Data.h" />
+    <ClInclude Include="View_Data.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="Tetromino.h" />
     <ClInclude Include="Timer.h" />

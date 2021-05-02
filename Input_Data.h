@@ -1,7 +1,7 @@
 #ifndef UI_CONTROLLER_INPUT_DATA_H
 #define UI_CONTROLLER_INPUT_DATA_H
 
-#include "data_type.h"
+#include "Data_Types.h"
 
 struct Input_Data
 {

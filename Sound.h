@@ -6,7 +6,7 @@
 #include <map>
 #include <string>
 
-#include "data_type.h"
+#include "Data_Types.h"
 
 const int SOUND_FREQUENCY = 44100;
 const int CHANNELS = 2;

@@ -1,6 +1,6 @@
-#include "Renderer_Data.h"
+#include "View_Data.h"
 
-void init_video(Renderer_Data* renderer_data, const char* TITLE, s32 screen_width, s32 screen_height)
+void init_video(View_Data* renderer_data, const char* TITLE, s32 screen_width, s32 screen_height)
 {
 	init_font();
 	init_sound();
@@ -22,7 +22,7 @@ void init_video(Renderer_Data* renderer_data, const char* TITLE, s32 screen_widt
 	SDL_RenderSetLogicalSize(renderer_data->renderer, screen_width, screen_height);
 }
 
-void load_data(Renderer_Data* renderer_data)
+void load_data(View_Data* renderer_data)
 {
 	renderer_data->font = TTF_OpenFont(DEFAULT_FONT_NAME, DEFAULT_FONT_SIZE);
 
@@ -39,7 +39,7 @@ void load_data(Renderer_Data* renderer_data)
 	Mix_PlayMusic(renderer_data->music[BGMUSIC], -1);
 }
 
-void destroy_render_data(Renderer_Data* renderer_data)
+void destroy_render_data(View_Data* renderer_data)
 {
 	SDL_DestroyWindow(renderer_data->window);
 	SDL_DestroyRenderer(renderer_data->renderer);

@@ -1,7 +1,7 @@
 #ifndef MODEL_TETROMINO_H
 #define MODEL_TETROMINO_H
 
-#include "data_type.h"
+#include "Data_Types.h"
 
 struct Tetromino
 {

@@ -1,7 +1,7 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include "data_type.h"
+#include "Data_Types.h"
 #include "Game_Speed.h"
 #include "Tetromino.h"
 #include "Input_State.h"

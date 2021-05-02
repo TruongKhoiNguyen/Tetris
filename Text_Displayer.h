@@ -1,11 +1,11 @@
-#ifndef UI_GAME_RENDERER_FONT_H
-#define UI_GAME_RENDERER_FONT_H
+#ifndef UI_VIEW_TEXT_DISPLAYER_H
+#define UI_VIEW_TEXT_DISPLAYER_H
 
 #include <SDL.h>
 #include <SDL_ttf.h>
 
-#include "data_type.h"
-#include "colors.h"
+#include "Data_Types.h"
+#include "Colors.h"
 
 const char DEFAULT_FONT_NAME[] = "font/soviet-bold-expanded.ttf";
 const s32 DEFAULT_FONT_SIZE = 26;
@@ -30,4 +30,4 @@ inline void init_font()
 void draw_string(SDL_Renderer* renderer, TTF_Font* font, const char* text, 
                  s32 x, s32 y, Text_Align alignment, Color color);
 
-#endif //UI_GAME_RENDERER_FONT_H
+#endif //UI_VIEW_TEXT_DISPLAYER_H
