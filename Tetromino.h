@@ -1,5 +1,5 @@
-#ifndef CORE_TETROMINO_H
-#define CORE_TETROMINO_H
+#ifndef MODEL_TETROMINO_H
+#define MODEL_TETROMINO_H
 
 #include "data_type.h"
 
@@ -81,4 +81,4 @@ const Tetromino TETROMINOES[] = {
     tetromino(TETROMINO_7, 3),
 };
 
-#endif //CORE_TETROMINO_H
+#endif //MODEL_TETROMINO_H

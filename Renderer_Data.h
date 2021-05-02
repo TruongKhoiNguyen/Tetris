@@ -9,7 +9,7 @@
 #include <string>
 
 #include "data_type.h"
-#include "Font.h"
+#include "Text_Displayer.h"
 #include "Sound.h"
 
 struct Renderer_Data

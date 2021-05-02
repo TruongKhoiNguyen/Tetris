@@ -1,11 +1,11 @@
-#ifndef CORE_GAME_MECHANICS_H
-#define CORE_GAME_MECHANICS_H
+#ifndef MODEL_GAME_MECHANICS_H
+#define MODEL_GAME_MECHANICS_H
 
 #include <cstring>
 
 #include "data_type.h"
 #include "Game_State.h"
-#include "Condition_checker.h"
+#include "Condition_Checker.h"
 #include "Game_State_Calculator.h"
 
 s32 find_lines(const u8* values, s32 width, s32 height, u8* lines_out);
@@ -29,4 +29,4 @@ soft_drop(Game_State* game)
     return true;
 }
 
-#endif //CORE_GAME_MECHANICS_H
+#endif //MODEL_GAME_MECHANICS_H

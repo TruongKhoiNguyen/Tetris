@@ -1,5 +1,7 @@
-#pragma once
-#include "Tetromino.h"
+#ifndef CORE_GAME_SPEED_H
+#define CORE_GAME_SPEED_H
+
+#include "data_type.h"
 
 const u8 FRAMES_PER_DROP[] = {
     48,
@@ -35,3 +37,5 @@ const u8 FRAMES_PER_DROP[] = {
 };
 
 const f32 TARGET_SECONDS_PER_FRAME = 1.f / 60.f;
+
+#endif //CORE_GAME_SPEED_H

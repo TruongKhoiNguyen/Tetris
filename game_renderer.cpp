@@ -84,20 +84,21 @@ draw_board(SDL_Renderer* renderer,
 }
 
 void
-render_game(const Game_State* game,
-    SDL_Renderer* renderer,
-    TTF_Font* font)
+render_game(const Game_State* game, Renderer_Data* renderer_data)
 {
+    const Color highlight_color = color(0xFF, 0xFF, 0xFF, 0xFF);
+    const s32 margin_y = SCORE_SURFACE_HEIGHT * GRID_SIZE;
 
     char buffer[4096];
-    Color highlight_color = color(0xFF, 0xFF, 0xFF, 0xFF);
-    s32 margin_y = 60;
 
-    draw_board(renderer, game->board, WIDTH, HEIGHT, 0, margin_y);
+    SDL_SetRenderDrawColor(renderer_data->renderer, 0, 0, 0, 0);
+    SDL_RenderClear(renderer_data->renderer);
+
+    draw_board(renderer_data->renderer, game->board, WIDTH, HEIGHT, 0, margin_y);
 
     if (game->phase == Game_Phase::GAME_PHASE_PLAY)
     {
-        draw_piece(renderer, &game->piece, 0, margin_y);
+        draw_piece(renderer_data->renderer, &game->piece, 0, margin_y);
 
         Piece_State piece = game->piece;
         while (check_piece_valid(&piece, game->board, WIDTH, HEIGHT))
@@ -106,7 +107,7 @@ render_game(const Game_State* game,
         }
         --piece.offset_pos.row;
 
-        draw_piece(renderer, &piece, 0, margin_y, true);
+        draw_piece(renderer_data->renderer, &piece, 0, margin_y, true);
 
     }
 
@@ -121,7 +122,7 @@ render_game(const Game_State* game,
                 s32 x = 0;
                 s32 y = row * GRID_SIZE + margin_y;
 
-                fill_rect(renderer, x, y,
+                fill_rect(renderer_data->renderer, x, y,
                     WIDTH * GRID_SIZE, GRID_SIZE, highlight_color);
             }
         }
@@ -130,33 +131,35 @@ render_game(const Game_State* game,
     {
         s32 x = WIDTH * GRID_SIZE / 2;
         s32 y = (HEIGHT * GRID_SIZE + margin_y) / 2;
-        draw_string(renderer, font, "GAME OVER",
+        draw_string(renderer_data->renderer, renderer_data->font, "GAME OVER",
             x, y, Text_Align::TEXT_ALIGN_CENTER, highlight_color);
     }
     else if (game->phase == Game_Phase::GAME_PHASE_START)
     {
         s32 x = WIDTH * GRID_SIZE / 2;
         s32 y = (HEIGHT * GRID_SIZE + margin_y) / 2;
-        draw_string(renderer, font, "PRESS START",
+        draw_string(renderer_data->renderer, renderer_data->font, "PRESS START",
             x, y, Text_Align::TEXT_ALIGN_CENTER, highlight_color);
 
         snprintf(buffer, sizeof(buffer), "STARTING LEVEL: %d", game->start_level);
-        draw_string(renderer, font, buffer,
+        draw_string(renderer_data->renderer, renderer_data->font, buffer,
             x, y + 30, Text_Align::TEXT_ALIGN_CENTER, highlight_color);
     }
 
-    fill_rect(renderer,
+    fill_rect(renderer_data->renderer,
         0, margin_y,
         WIDTH * GRID_SIZE, (HEIGHT - VISIBLE_HEIGHT) * GRID_SIZE,
         color(0x00, 0x00, 0x00, 0x00));
 
 
     snprintf(buffer, sizeof(buffer), "LEVEL: %d", game->play_score.level);
-    draw_string(renderer, font, buffer, 5, 5, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
+    draw_string(renderer_data->renderer, renderer_data->font, buffer, 5, 5, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
 
     snprintf(buffer, sizeof(buffer), "LINES: %d", game->play_score.line_count);
-    draw_string(renderer, font, buffer, 5, 35, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
+    draw_string(renderer_data->renderer, renderer_data->font, buffer, 5, 35, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
 
     snprintf(buffer, sizeof(buffer), "POINTS: %d", game->play_score.points);
-    draw_string(renderer, font, buffer, 5, 65, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
+    draw_string(renderer_data->renderer, renderer_data->font, buffer, 5, 65, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
+
+    SDL_RenderPresent(renderer_data->renderer);
 }

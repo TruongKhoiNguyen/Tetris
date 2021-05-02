@@ -1,5 +1,5 @@
-#ifndef CORE_PIECE_STATE_H
-#define CORE_PIECE_STATE_H
+#ifndef MODEL_PIECE_STATE_H
+#define MODEL_PIECE_STATE_H
 
 #include <cstdlib>
 
@@ -22,4 +22,4 @@ struct Piece_State
 
 void generate_piece(Piece_State& piece);
 
-#endif //CORE_PIECE_STATE_H
+#endif //MODEL_PIECE_STATE_H

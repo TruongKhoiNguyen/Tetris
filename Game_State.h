@@ -1,5 +1,5 @@
-#ifndef CORE_GAME_STATE_H
-#define CORE_GAME_STATE_H
+#ifndef MODEL_GAME_STATE_H
+#define MODEL_GAME_STATE_H
 
 #include "data_type.h"
 #include "Piece_State.h"
@@ -21,6 +21,7 @@ struct Game_State
 
     s32 start_level;
 
+    bool quit;
 
     Timer timer;
 };
@@ -39,4 +40,4 @@ matrix_set(u8* values, s32 width, s32 row, s32 col, u8 value)
     values[index] = value;
 }
 
-#endif //CORE_GAME_STATE_H
+#endif //MODEL_GAME_STATE_H

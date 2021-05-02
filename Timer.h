@@ -1,5 +1,5 @@
-#ifndef CORE_TIMER_H
-#define CORE_TIMER_H
+#ifndef MODEL_TIMER_H
+#define MODEL_TIMER_H
 
 #include "data_type.h"
 
@@ -10,4 +10,4 @@ struct Timer
     f32 time;
 };
 
-#endif //CORE_TIMER_H
+#endif //MODEL_TIMER_H

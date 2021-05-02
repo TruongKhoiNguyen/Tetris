@@ -1,5 +1,5 @@
-#ifndef CORE_GAME_STATE_CALCULATOR
-#define CORE_GAME_STATE_CALCULATOR
+#ifndef MODEL_GAME_STATE_CALCULATOR
+#define MODEL_GAME_STATE_CALCULATOR
 
 #include "data_type.h"
 #include "Game_Speed.h"
@@ -53,4 +53,4 @@ inline s32 get_lines_for_next_level(s32 start_level, s32 level)
 }
 
 
-#endif //CORE_GAME_STATE_CALCULATOR
+#endif //MODEL_GAME_STATE_CALCULATOR

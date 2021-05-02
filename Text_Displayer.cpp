@@ -1,4 +1,4 @@
-#include "Font.h"
+#include "Text_Displayer.h"
 
 void draw_string(SDL_Renderer* renderer, TTF_Font* font, const char* text, 
                  s32 x, s32 y, Text_Align alignment, Color color)

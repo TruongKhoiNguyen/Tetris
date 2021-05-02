@@ -1,5 +1,5 @@
-#ifndef CORE_PHASE_H
-#define CORE_PHASE_H
+#ifndef MODEL_PHASE_H
+#define MODEL_PHASE_H
 
 enum class Game_Phase
 {
@@ -9,4 +9,4 @@ enum class Game_Phase
     GAME_PHASE_GAMEOVER
 };
 
-#endif //CORE_PHASE_H
+#endif //MODEL_PHASE_H

@@ -144,9 +144,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Condition_Checker.cpp" />
-    <ClCompile Include="core.cpp" />
+    <ClCompile Include="Model.cpp" />
     <ClCompile Include="Draw_Func.cpp" />
-    <ClCompile Include="Font.cpp" />
+    <ClCompile Include="Text_Displayer.cpp" />
     <ClCompile Include="Game_Mechanics.cpp" />
     <ClCompile Include="Game_Renderer.cpp" />
     <ClCompile Include="Piece_State.cpp" />
@@ -158,11 +158,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="colors.h" />
-    <ClInclude Include="Condition_checker.h" />
-    <ClInclude Include="Core.h" />
+    <ClInclude Include="Condition_Checker.h" />
+    <ClInclude Include="Model.h" />
     <ClInclude Include="data_type.h" />
     <ClInclude Include="Draw_Func.h" />
-    <ClInclude Include="Font.h" />
+    <ClInclude Include="Text_Displayer.h" />
     <ClInclude Include="Game_Mechanics.h" />
     <ClInclude Include="Game_Phase.h" />
     <ClInclude Include="Game_Renderer.h" />

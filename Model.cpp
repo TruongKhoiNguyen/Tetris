@@ -1,4 +1,4 @@
-#include "core.h"
+#include "Model.h"
 
 void
 update_game_start(Game_State* game, const Input_State* input)
@@ -109,6 +109,11 @@ void
 update_game(Game_State* game,
     const Input_State* input)
 {
+    if (input->quit)
+    {
+        game->quit = true;
+    }
+
     switch (game->phase)
     {
     case Game_Phase::GAME_PHASE_START:

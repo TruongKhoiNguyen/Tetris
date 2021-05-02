@@ -1,4 +1,4 @@
-#include "Condition_checker.h"
+#include "Condition_Checker.h"
 
 bool check_piece_valid(const Piece_State* piece,
     const u8* board, s32 width, s32 height)

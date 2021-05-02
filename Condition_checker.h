@@ -1,5 +1,5 @@
-#ifndef CORE_CONDITION_CHECKER_H
-#define CORE_CONDITION_CHECKER_H
+#ifndef MODEL_CONDITION_CHECKER_H
+#define MODEL_CONDITION_CHECKER_H
 
 #include <cassert>
 
@@ -37,4 +37,4 @@ inline u8 check_row_empty(const u8* values, s32 width, s32 row)
 
 bool check_piece_valid(const Piece_State* piece, const u8* board, s32 width, s32 height);
 
-#endif //CORE_CONDITION_CHECKER_H
+#endif //MODEL_CONDITION_CHECKER_H

@@ -15,5 +15,5 @@
 
 #include "colors.h"
 #include "Game_Speed.h"
-#include "Core.h"
+#include "Model.h"
 #include "Game_Renderer.h"
