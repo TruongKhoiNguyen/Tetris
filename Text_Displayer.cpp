@@ -1,10 +1,10 @@
 #include "Text_Displayer.h"
 
-void draw_string(SDL_Renderer* renderer, TTF_Font* font, const char* text, 
+void draw_string(SDL_Renderer* renderer, TTF_Font* font, const std::string text, 
                  s32 x, s32 y, Text_Align alignment, Color color)
 {
     SDL_Color sdl_color = SDL_Color{ color.r, color.g, color.b, color.a };
-    SDL_Surface* surface = TTF_RenderText_Solid(font, text, sdl_color);
+    SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), sdl_color);
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
 
     SDL_Rect rect;

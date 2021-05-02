@@ -4,11 +4,12 @@
 #include <iostream>
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include <string>
 
 #include "Data_Types.h"
 #include "Colors.h"
 
-const char DEFAULT_FONT_NAME[] = "font/m22.ttf";
+const std::string DEFAULT_FONT_NAME = "font/m22.ttf";
 const s32 DEFAULT_FONT_SIZE = 18;
 
 enum class Text_Align
@@ -27,7 +28,7 @@ inline void init_font()
     }
 }
 
-void draw_string(SDL_Renderer* renderer, TTF_Font* font, const char* text, 
+void draw_string(SDL_Renderer* renderer, TTF_Font* font, const std::string text, 
                  s32 x, s32 y, Text_Align alignment, Color color);
 
 #endif //UI_VIEW_TEXT_DISPLAYER_H

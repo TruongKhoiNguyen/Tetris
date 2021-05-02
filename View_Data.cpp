@@ -26,7 +26,7 @@ void init_video(View_Data* view_data, const char* TITLE, s32 screen_width, s32 s
 
 void load_data(View_Data* view_data)
 {
-	view_data->font = TTF_OpenFont(DEFAULT_FONT_NAME, DEFAULT_FONT_SIZE);
+	view_data->font = TTF_OpenFont(DEFAULT_FONT_NAME.c_str(), DEFAULT_FONT_SIZE);
 
 	for (int i = 0; i < MUSIC_LIST_SIZE; ++i)
 	{

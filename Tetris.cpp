@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <string>
 
 #include "Data_Types.h"
 #include "Model.h"
@@ -6,13 +7,13 @@
 
 int main(int argc, char* argv[])
 {
-    const char* TITLE = "TETRIS";
+    const std::string TITLE = "TETRIS";
     const s32 SCREEN_WIDTH = WIDTH * GRID_SIZE;
     const s32 SCREEN_HEIGHT = (HEIGHT + SCORE_SURFACE_HEIGHT) * GRID_SIZE;
 
     View_Data* view_data = new View_Data();
 
-    init_UI(view_data, TITLE, SCREEN_WIDTH, SCREEN_HEIGHT);
+    init_UI(view_data, TITLE.c_str(), SCREEN_WIDTH, SCREEN_HEIGHT);
 
     Game_State* game = new Game_State();
     Raw_Input_Data* raw_input = create_raw_input_data();
