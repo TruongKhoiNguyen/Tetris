@@ -170,7 +170,7 @@
     <ClInclude Include="Game_State_Calculator.h" />
     <ClInclude Include="include.h" />
     <ClInclude Include="Input_Data.h" />
-    <ClInclude Include="Input_Getter.h" />
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="Input_State.h" />
     <ClInclude Include="Piece_State.h" />
     <ClInclude Include="Play_Score.h" />

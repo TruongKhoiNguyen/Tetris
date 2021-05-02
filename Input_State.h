@@ -1,5 +1,5 @@
-#ifndef UI_GETTERSCANNER_INPUT_STATE_H
-#define UI_GETTERSCANNER_INPUT_STATE_H
+#ifndef UI_CONTROLLER_INPUT_STATE_H
+#define UI_CONTROLLER_INPUT_STATE_H
 
 #include <SDL.h>
 
@@ -63,4 +63,4 @@ inline Input_State get_input(Raw_Input_Data* raw_input)
     };
 }
 
-#endif //UI_GETTERSCANNER_INPUT_STATE_H
+#endif //UI_CONTROLLER_INPUT_STATE_H

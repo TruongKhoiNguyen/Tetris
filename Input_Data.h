@@ -1,5 +1,5 @@
-#ifndef PERIPHERALS_SCANNER_INPUT_DATA_H
-#define PERIPHERALS_SCANNER_INPUT_DATA_H
+#ifndef UI_CONTROLLER_INPUT_DATA_H
+#define UI_CONTROLLER_INPUT_DATA_H
 
 #include "data_type.h"
 
@@ -38,4 +38,4 @@ inline Raw_Input_Data* create_raw_input_data()
     return input_data;
 }
 
-#endif //PERIPHERALS_SCANNER_INPUT_DATA_H
+#endif //UI_CONTROLLER_INPUT_DATA_H
