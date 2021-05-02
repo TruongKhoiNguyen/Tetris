@@ -1,12 +1,11 @@
 #include "include.h"
-#include "Input_Data.h"
-#include "Input_State.h"
+#include "Input_Getter.h"
 #include "Font.h"
 #include "Sound.h"
 
 int main(int argc, char* argv[])
 {
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
+    if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
     {
         return 1;
     }
@@ -31,8 +30,7 @@ int main(int argc, char* argv[])
         SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
     Game_State* game = new Game_State();
-    Input_Data* this_input = new Input_Data();
-    Input_Data* prev_input = new Input_Data();
+    Raw_Input_Data* raw_input = create_raw_input_data();
     Input_State* input = new Input_State();
 
     srand((u32)time(0));
@@ -44,16 +42,8 @@ int main(int argc, char* argv[])
     {
         game->timer.time = SDL_GetTicks() / 1000.0f;
 
-        SDL_Event e;
-        while (SDL_PollEvent(&e) != 0)
-        {
-            if (e.type == SDL_QUIT)
-            {
-                quit = true;
-            }
-        }
+        *input = get_input(raw_input);
 
-        *input = get_input(prev_input, this_input);
         if (input->quit)
         {
             quit = true;
@@ -68,8 +58,7 @@ int main(int argc, char* argv[])
         SDL_RenderPresent(renderer);
     }
 
-    delete prev_input;
-    delete this_input;
+    delete raw_input;
     delete game;
 
     quit_mix();

@@ -168,6 +168,7 @@
     <ClInclude Include="Game_State_Calculator.h" />
     <ClInclude Include="include.h" />
     <ClInclude Include="Input_Data.h" />
+    <ClInclude Include="Input_Getter.h" />
     <ClInclude Include="Input_State.h" />
     <ClInclude Include="Piece_State.h" />
     <ClInclude Include="Play_Score.h" />
@@ -180,6 +181,8 @@
   <ItemGroup>
     <Text Include="Main_Components.txt" />
     <Text Include="Play_game.txt" />
+    <Text Include="Renderer_components.txt" />
+    <Text Include="UI_Components.txt" />
     <Text Include="User_Story.txt" />
     <Text Include="Using_start_screen.txt" />
   </ItemGroup>

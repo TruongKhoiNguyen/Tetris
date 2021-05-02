@@ -25,20 +25,20 @@
     <Filter Include="Documentations">
       <UniqueIdentifier>{25892335-3b6f-4257-be66-7c0755337be2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Peripherals">
-      <UniqueIdentifier>{c4ffc785-be8e-43f5-9e74-77663366fe88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Peripherals\Game_Renderer">
-      <UniqueIdentifier>{6e62e4f4-042a-4929-b875-5e3432cf5eec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Peripherals\Game_Input_Scanner">
-      <UniqueIdentifier>{bd775560-102b-4981-b657-78af8e2769a7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Documentations\Use cases">
       <UniqueIdentifier>{81b523ac-9d9c-409f-899b-578bc0c67613}</UniqueIdentifier>
     </Filter>
     <Filter Include="Documentations\Components">
       <UniqueIdentifier>{1488ef82-2872-4d10-9349-f48eff32603f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{c4ffc785-be8e-43f5-9e74-77663366fe88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Game_Renderer">
+      <UniqueIdentifier>{6e62e4f4-042a-4929-b875-5e3432cf5eec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Game_Input_Getter">
+      <UniqueIdentifier>{bd775560-102b-4981-b657-78af8e2769a7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -81,13 +81,13 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="colors.h">
-      <Filter>Header Files\Peripherals\Game_Renderer</Filter>
+      <Filter>Header Files\UI\Game_Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Core.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="Game_Renderer.h">
-      <Filter>Header Files\Peripherals\Game_Renderer</Filter>
+      <Filter>Header Files\UI\Game_Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Tetromino.h">
       <Filter>Header Files\Core</Filter>
@@ -111,16 +111,16 @@
       <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="Input_Data.h">
-      <Filter>Header Files\Peripherals\Game_Input_Scanner</Filter>
+      <Filter>Header Files\UI\Game_Input_Getter</Filter>
     </ClInclude>
     <ClInclude Include="Input_State.h">
-      <Filter>Header Files\Peripherals\Game_Input_Scanner</Filter>
+      <Filter>Header Files\UI\Game_Input_Getter</Filter>
     </ClInclude>
     <ClInclude Include="Game_Speed.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="Font.h">
-      <Filter>Header Files\Peripherals\Game_Renderer</Filter>
+      <Filter>Header Files\UI\Game_Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Condition_checker.h">
       <Filter>Header Files\Core</Filter>
@@ -132,10 +132,13 @@
       <Filter>Header Files\Core</Filter>
     </ClInclude>
     <ClInclude Include="Sound.h">
-      <Filter>Header Files\Peripherals\Game_Renderer</Filter>
+      <Filter>Header Files\UI\Game_Renderer</Filter>
     </ClInclude>
     <ClInclude Include="Draw_Func.h">
-      <Filter>Header Files\Peripherals\Game_Renderer</Filter>
+      <Filter>Header Files\UI\Game_Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Input_Getter.h">
+      <Filter>Header Files\UI\Game_Input_Getter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +152,12 @@
       <Filter>Documentations\Use cases</Filter>
     </Text>
     <Text Include="Main_Components.txt">
+      <Filter>Documentations\Components</Filter>
+    </Text>
+    <Text Include="UI_Components.txt">
+      <Filter>Documentations\Components</Filter>
+    </Text>
+    <Text Include="Renderer_components.txt">
       <Filter>Documentations\Components</Filter>
     </Text>
   </ItemGroup>

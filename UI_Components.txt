@@ -1,0 +1,39 @@
+Actors:
+- Input_Getter
+	- create_raw_input_data()
+	- get_input()
+- Renderer
+	- create_renderer()
+	- load_data()
+	- destroy_render_data()
+- Input_raw_data
+	- Prev_input
+	- This_input
+- Input_data
+- Renderer_data
+	- Music[]
+	- font*
+	- windows*
+	- renderer*
+
+Sequence
+- init():
+	- UI init SDL
+	- UI init SDL_ttf
+	- UI init SDL_Mixer
+	- UI create input_raw_data
+		- Call create input_raw_data
+	- Ui Create windows and renderer and save them to renderer_data
+		- Call create renderer from Renderer
+	- UI load font and save them to renderer_data
+	- Ui load music and save them to renderer_data
+		- Call load data from renderer
+- get_input():
+	- Call get_input from input_getter()
+- render():
+	- Call render from render
+- quit():
+	- Call destroy_renderer_data():
+	- Call quit SDL
+	- Call quit SDL_Mixer
+	- Call quit SDL_Font

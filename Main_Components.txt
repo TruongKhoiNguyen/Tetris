@@ -15,3 +15,4 @@ Sequence
 - Main program get input
 - Main program pass input information to game core
 - Main program invoke renderer
+- After end game, destroy all created objects
