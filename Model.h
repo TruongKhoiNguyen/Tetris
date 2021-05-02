@@ -16,4 +16,9 @@ void spawn_piece(Game_State* game);
 void update_game(Game_State* game,
     const Input_State* input);
 
+inline f32 get_time()
+{
+    return SDL_GetTicks() / 1000.0f;
+}
+
 #endif //MODEL_H

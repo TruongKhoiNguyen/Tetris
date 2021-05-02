@@ -23,10 +23,10 @@ Sequence
 	- UI init SDL_Mixer
 	- UI create input_raw_data
 		- Call create input_raw_data
-	- Ui Create windows and renderer and save them to renderer_data
+	- Ui Create windows and renderer and save them to view_data
 		- Call create renderer from Renderer
-	- UI load font and save them to renderer_data
-	- Ui load music and save them to renderer_data
+	- UI load font and save them to view_data
+	- Ui load music and save them to view_data
 		- Call load data from renderer
 - get_input():
 	- Call get_input from input_getter()

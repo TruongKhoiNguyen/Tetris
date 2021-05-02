@@ -1,16 +1,15 @@
 #ifndef UI_VIEW_TEXT_DISPLAYER_H
 #define UI_VIEW_TEXT_DISPLAYER_H
 
+#include <iostream>
 #include <SDL.h>
 #include <SDL_ttf.h>
 
 #include "Data_Types.h"
 #include "Colors.h"
 
-const char DEFAULT_FONT_NAME[] = "font/soviet-bold-expanded.ttf";
-const s32 DEFAULT_FONT_SIZE = 26;
-
-typedef TTF_Font Font;
+const char DEFAULT_FONT_NAME[] = "font/m22.ttf";
+const s32 DEFAULT_FONT_SIZE = 18;
 
 enum class Text_Align
 {
@@ -23,6 +22,7 @@ inline void init_font()
 {
     if (TTF_Init() < 0)
     {
+        std::cout << TTF_GetError << std::endl;
         exit(2);
     }
 }

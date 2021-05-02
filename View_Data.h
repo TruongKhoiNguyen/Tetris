@@ -24,8 +24,8 @@ struct View_Data
 	std::map<std::string, Mix_Chunk*> effects;
 };
 
-void init_video(View_Data* renderer_data, const char* TITLE, s32 screen_width, s32 screen_height);
-void load_data(View_Data* renderer_data);
-void destroy_render_data(View_Data* renderer_data);
+void init_video(View_Data* view_data, const char* TITLE, s32 screen_width, s32 screen_height);
+void load_data(View_Data* view_data);
+void destroy_render_data(View_Data* view_data);
 
 #endif //UI_VIEW_VIEW_DATA_H

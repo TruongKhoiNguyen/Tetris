@@ -1,4 +1,7 @@
-#include "include.h"
+#include <algorithm>
+
+#include "Data_Types.h"
+#include "Model.h"
 #include "UI.h"
 
 int main(int argc, char* argv[])
@@ -7,9 +10,9 @@ int main(int argc, char* argv[])
     const s32 SCREEN_WIDTH = WIDTH * GRID_SIZE;
     const s32 SCREEN_HEIGHT = (HEIGHT + SCORE_SURFACE_HEIGHT) * GRID_SIZE;
 
-    View_Data* renderer_data = new View_Data();
+    View_Data* view_data = new View_Data();
 
-    init_UI(renderer_data, TITLE, SCREEN_WIDTH, SCREEN_HEIGHT);
+    init_UI(view_data, TITLE, SCREEN_WIDTH, SCREEN_HEIGHT);
 
     Game_State* game = new Game_State();
     Raw_Input_Data* raw_input = create_raw_input_data();
@@ -21,20 +24,20 @@ int main(int argc, char* argv[])
     game->quit = false;
     while (!game->quit)
     {
-        game->timer.time = SDL_GetTicks() / 1000.0f;
+        game->timer.time = get_time();
 
         *input = get_input(raw_input);
 
         update_game(game, input);
-        render_game(game, renderer_data);
+        render_game(game, view_data);
     }
 
     delete raw_input;
     delete game;
 
-    quit_UI(renderer_data);
+    quit_UI(view_data);
 
-    delete renderer_data;
+    delete view_data;
 
     return 0;
 }

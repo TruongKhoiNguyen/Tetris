@@ -86,9 +86,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Data_Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>

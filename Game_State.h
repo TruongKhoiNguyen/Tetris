@@ -22,6 +22,8 @@ struct Game_State
     s32 start_level;
 
     bool quit;
+    bool play_sound_signal;
+    //s32 play_sound_counter;
 
     Timer timer;
 };

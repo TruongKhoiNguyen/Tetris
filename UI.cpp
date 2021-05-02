@@ -1,18 +1,19 @@
 #include "UI.h"
 
-void init_UI(View_Data* renderer_data, const char* TITLE, s32 screen_width, s32 screen_height)
+void init_UI(View_Data* view_data, const char* TITLE, s32 screen_width, s32 screen_height)
 {
-	if (SDL_Init(SDL_INIT_EVERYTHING) != 1)
+	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 	{
 		std::cout << SDL_GetError() << std::endl;
+		exit(5);
 	}
 
-	init_video(renderer_data, TITLE, screen_width, screen_height);
-	load_data(renderer_data);
+	init_video(view_data, TITLE, screen_width, screen_height);
+	load_data(view_data);
 }
-void quit_UI(View_Data* renderer_data)
+void quit_UI(View_Data* view_data)
 {
-	destroy_render_data(renderer_data);
+	destroy_render_data(view_data);
 
 	TTF_Quit();
 	Mix_Quit();

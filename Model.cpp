@@ -6,11 +6,13 @@ update_game_start(Game_State* game, const Input_State* input)
     if (input->dup > 0)
     {
         ++game->start_level;
+        game->play_sound_signal = true;
     }
 
     if (input->ddown > 0 && game->start_level > 0)
     {
         --game->start_level;
+        game->play_sound_signal = true;
     }
 
     if (input->da > 0)
@@ -38,6 +40,8 @@ update_game_line(Game_State* game)
 {
     if (game->timer.time >= game->timer.highlight_end_time)
     {
+        game->play_sound_signal = true;
+
         clear_lines(game->board, WIDTH, HEIGHT, game->lines);
         game->play_score.line_count += game->pending_line_count;
         game->play_score.points += compute_points(game->play_score.level, game->pending_line_count);
@@ -57,6 +61,8 @@ void
 update_game_play(Game_State* game,
     const Input_State* input)
 {
+    const f32 line_delay_time = 0.5f;
+
     Piece_State piece = game->piece;
     if (input->dleft > 0)
     {
@@ -84,6 +90,7 @@ update_game_play(Game_State* game,
     if (input->da > 0)
     {
         while (soft_drop(game));
+        game->play_sound_signal = true;
     }
 
     while (game->timer.time >= game->timer.next_drop_time)
@@ -95,13 +102,14 @@ update_game_play(Game_State* game,
     if (game->pending_line_count > 0)
     {
         game->phase = Game_Phase::GAME_PHASE_LINE;
-        game->timer.highlight_end_time = game->timer.time + 0.5f;
+        game->timer.highlight_end_time = game->timer.time + line_delay_time;
     }
 
     s32 game_over_row = 0;
     if (!check_row_empty(game->board, WIDTH, game_over_row))
     {
         game->phase = Game_Phase::GAME_PHASE_GAMEOVER;
+        game->play_sound_signal = true;
     }
 }
 

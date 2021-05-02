@@ -84,21 +84,21 @@ draw_board(SDL_Renderer* renderer,
 }
 
 void
-render_game(const Game_State* game, View_Data* renderer_data)
+render_game(Game_State* game, View_Data* view_data)
 {
     const Color highlight_color = color(0xFF, 0xFF, 0xFF, 0xFF);
     const s32 margin_y = SCORE_SURFACE_HEIGHT * GRID_SIZE;
 
     char buffer[4096];
 
-    SDL_SetRenderDrawColor(renderer_data->renderer, 0, 0, 0, 0);
-    SDL_RenderClear(renderer_data->renderer);
+    SDL_SetRenderDrawColor(view_data->renderer, 0, 0, 0, 0);
+    SDL_RenderClear(view_data->renderer);
 
-    draw_board(renderer_data->renderer, game->board, WIDTH, HEIGHT, 0, margin_y);
+    draw_board(view_data->renderer, game->board, WIDTH, HEIGHT, 0, margin_y);
 
     if (game->phase == Game_Phase::GAME_PHASE_PLAY)
     {
-        draw_piece(renderer_data->renderer, &game->piece, 0, margin_y);
+        draw_piece(view_data->renderer, &game->piece, 0, margin_y);
 
         Piece_State piece = game->piece;
         while (check_piece_valid(&piece, game->board, WIDTH, HEIGHT))
@@ -107,8 +107,13 @@ render_game(const Game_State* game, View_Data* renderer_data)
         }
         --piece.offset_pos.row;
 
-        draw_piece(renderer_data->renderer, &piece, 0, margin_y, true);
+        draw_piece(view_data->renderer, &piece, 0, margin_y, true);
 
+        if (game->play_sound_signal)
+        {
+            Mix_PlayChannel(-1, view_data->effects[FALL_SOUND], 0);
+            game->play_sound_signal = false;
+        }
     }
 
     if (game->phase == Game_Phase::GAME_PHASE_LINE)
@@ -122,44 +127,62 @@ render_game(const Game_State* game, View_Data* renderer_data)
                 s32 x = 0;
                 s32 y = row * GRID_SIZE + margin_y;
 
-                fill_rect(renderer_data->renderer, x, y,
+                fill_rect(view_data->renderer, x, y,
                     WIDTH * GRID_SIZE, GRID_SIZE, highlight_color);
             }
+        }
+
+        if (game->play_sound_signal)
+        {
+            Mix_PlayChannel(-1, view_data->effects[LINE_SOUND], 0);
+            game->play_sound_signal = false;
         }
     }
     else if (game->phase == Game_Phase::GAME_PHASE_GAMEOVER)
     {
         s32 x = WIDTH * GRID_SIZE / 2;
         s32 y = (HEIGHT * GRID_SIZE + margin_y) / 2;
-        draw_string(renderer_data->renderer, renderer_data->font, "GAME OVER",
+        draw_string(view_data->renderer, view_data->font, "GAME OVER",
             x, y, Text_Align::TEXT_ALIGN_CENTER, highlight_color);
+
+        if (game->play_sound_signal)
+        {
+            Mix_PlayChannel(-1, view_data->effects[GAMEOVER_SOUND], 0);
+            game->play_sound_signal = false;
+        }
     }
     else if (game->phase == Game_Phase::GAME_PHASE_START)
     {
         s32 x = WIDTH * GRID_SIZE / 2;
         s32 y = (HEIGHT * GRID_SIZE + margin_y) / 2;
-        draw_string(renderer_data->renderer, renderer_data->font, "PRESS START",
+        draw_string(view_data->renderer, view_data->font, "PRESS START",
             x, y, Text_Align::TEXT_ALIGN_CENTER, highlight_color);
 
         snprintf(buffer, sizeof(buffer), "STARTING LEVEL: %d", game->start_level);
-        draw_string(renderer_data->renderer, renderer_data->font, buffer,
+        draw_string(view_data->renderer, view_data->font, buffer,
             x, y + 30, Text_Align::TEXT_ALIGN_CENTER, highlight_color);
+
+        if (game->play_sound_signal)
+        {
+            Mix_PlayChannel(-1, view_data->effects[SELECTION_SOUND], 0);
+            game->play_sound_signal = false;
+        }
     }
 
-    fill_rect(renderer_data->renderer,
+    fill_rect(view_data->renderer,
         0, margin_y,
         WIDTH * GRID_SIZE, (HEIGHT - VISIBLE_HEIGHT) * GRID_SIZE,
         color(0x00, 0x00, 0x00, 0x00));
 
 
     snprintf(buffer, sizeof(buffer), "LEVEL: %d", game->play_score.level);
-    draw_string(renderer_data->renderer, renderer_data->font, buffer, 5, 5, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
+    draw_string(view_data->renderer, view_data->font, buffer, 5, 5, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
 
     snprintf(buffer, sizeof(buffer), "LINES: %d", game->play_score.line_count);
-    draw_string(renderer_data->renderer, renderer_data->font, buffer, 5, 35, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
+    draw_string(view_data->renderer, view_data->font, buffer, 5, 35, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
 
     snprintf(buffer, sizeof(buffer), "POINTS: %d", game->play_score.points);
-    draw_string(renderer_data->renderer, renderer_data->font, buffer, 5, 65, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
+    draw_string(view_data->renderer, view_data->font, buffer, 5, 65, Text_Align::TEXT_ALIGN_LEFT, highlight_color);
 
-    SDL_RenderPresent(renderer_data->renderer);
+    SDL_RenderPresent(view_data->renderer);
 }

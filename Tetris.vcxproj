@@ -168,7 +168,6 @@
     <ClInclude Include="View.h" />
     <ClInclude Include="Game_State.h" />
     <ClInclude Include="Game_State_Calculator.h" />
-    <ClInclude Include="include.h" />
     <ClInclude Include="Input_Data.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Input_State.h" />

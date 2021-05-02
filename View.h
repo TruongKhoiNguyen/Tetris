@@ -18,6 +18,6 @@
 const s32 GRID_SIZE = 30;
 const s32 SCORE_SURFACE_HEIGHT = 2;
 
-void render_game(const Game_State* game, View_Data* renderer_data);
+void render_game(Game_State* game, View_Data* view_data);
 
 #endif //UI_VIEW_H
