@@ -1,33 +1,15 @@
 #include "include.h"
-#include "Input_Getter.h"
-#include "Font.h"
-#include "Sound.h"
+#include "UI.h"
 
 int main(int argc, char* argv[])
 {
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
-    {
-        return 1;
-    }
+    const char* TITLE = "TETRIS";
+    const s32 SCREEN_WIDTH = WIDTH * GRID_SIZE;
+    const s32 SCREEN_HEIGHT = (HEIGHT + 2) * GRID_SIZE;
 
-    font_init();
-    Font* font = load_font();
+    Renderer_Data* renderer_data = new Renderer_Data();
 
-    init_sound();
-    Music* mus = load_bgmusic();
-    Sound_Effect sound_effect = load_sound_effect();
-
-    SDL_Window* window = SDL_CreateWindow(
-        "Tetris",
-        SDL_WINDOWPOS_UNDEFINED,
-        SDL_WINDOWPOS_UNDEFINED,
-        300,
-        720,
-        SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
-    SDL_Renderer* renderer = SDL_CreateRenderer(
-        window,
-        -1,
-        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    init_UI(renderer_data, TITLE, SCREEN_WIDTH, SCREEN_HEIGHT);
 
     Game_State* game = new Game_State();
     Raw_Input_Data* raw_input = create_raw_input_data();
@@ -36,7 +18,6 @@ int main(int argc, char* argv[])
     srand((u32)time(0));
     spawn_piece(game);
 
-    play_bgmusic(mus);
     bool quit = false;
     while (!quit)
     {
@@ -49,23 +30,21 @@ int main(int argc, char* argv[])
             quit = true;
         }
 
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-        SDL_RenderClear(renderer);
+        SDL_SetRenderDrawColor(renderer_data->renderer, 0, 0, 0, 0);
+        SDL_RenderClear(renderer_data->renderer);
 
         update_game(game, input);
-        render_game(game, renderer, font);
+        render_game(game, renderer_data->renderer, renderer_data->font);
 
-        SDL_RenderPresent(renderer);
+        SDL_RenderPresent(renderer_data->renderer);
     }
 
     delete raw_input;
     delete game;
 
-    quit_mix();
-    close_font(font);
-    exit_ttf();
-    SDL_DestroyRenderer(renderer);
-    SDL_Quit();
+    quit_UI(renderer_data);
+
+    delete renderer_data;
 
     return 0;
 }

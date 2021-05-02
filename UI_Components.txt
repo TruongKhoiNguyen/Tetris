@@ -4,7 +4,7 @@ Actors:
 	- get_input()
 - Renderer
 	- create_renderer()
-	- load_data()
+	- render()
 	- destroy_render_data()
 - Input_raw_data
 	- Prev_input

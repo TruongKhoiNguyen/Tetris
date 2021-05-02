@@ -1,0 +1,26 @@
+Actor 
+- Render_data
+	- windows
+	- renderers
+	- font
+	- music[]
+	- effect[]
+
+Sequences
+- create renderer()
+	- create window and save pointer to render data
+	- create renderer and save pointer to render data
+	- load font and save to render data
+	- load music and save to render data
+	- play background music
+- render
+	- check phase in game object
+	- render with respect to game phase
+- destroy render data
+	- destroy windows
+	- destroy renderer
+	- destroy font
+	- destroy music
+	- quit sdl
+	- quit sdl ttf
+	- quit sdl mixer
