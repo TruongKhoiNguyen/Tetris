@@ -12,4 +12,4 @@
 
 ## Cách chơi
 * Bắt đầu bằng cách chọn mức độ chơi, nhấn phím lên xuống để thay đổi mức độ, nhấn phím space để chơi
-* Di chuyên Tetromino bằng cách nhấn phím sang trái và sang phải, xoay tetromino bằng phím lên, tăng tốc độ rơi của tetromino bằng phím xuống, đặt ngay tetromino xuống dưới bằng phím space.
+* Di chuyển Tetromino bằng cách nhấn phím sang trái và sang phải, xoay tetromino bằng phím lên, tăng tốc độ rơi của tetromino bằng phím xuống, đặt ngay tetromino xuống dưới bằng phím space.
