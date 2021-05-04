@@ -14,9 +14,7 @@ struct Game_State
     s32 pending_line_count;
 
     Piece_State piece;
-
     Game_Phase phase;
-
     Play_Score play_score;
 
     s32 start_level;

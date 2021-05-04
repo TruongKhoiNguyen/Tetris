@@ -84,6 +84,9 @@
     <ClCompile Include="Sound.cpp">
       <Filter>Source Files\UI\View</Filter>
     </ClCompile>
+    <ClCompile Include="Input_State.cpp">
+      <Filter>Source Files\UI\Controller</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data_Types.h">

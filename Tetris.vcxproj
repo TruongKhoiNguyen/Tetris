@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Condition_Checker.cpp" />
+    <ClCompile Include="Input_State.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Draw_Functions.cpp" />
     <ClCompile Include="Text_Displayer.cpp" />

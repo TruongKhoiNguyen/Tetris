@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
     {
         game->timer.time = get_time();
 
-        *input = get_input(raw_input);
+        get_input(raw_input, input);
 
         update_game(game, input);
         render_game(game, view_data);
