@@ -1,7 +1,7 @@
 # Tetris
 
 ## Giới thiệu chung
-Đây là một tựa game được viết dựa trên tựa game Tetris do Alexey Pajitnov viết vào năm 1984, tựa game này đã được cắt bớt một vài tính năng đề phù hợp hơn cho sinh viên.
+Đây là một tựa game được viết dựa trên tựa game Tetris do Alexey Pajitnov viết vào năm 1984, tựa game này đã được cắt bớt một vài tính năng để phù hợp hơn cho sinh viên.
 
 ## Ngôn ngữ sử dụng
 * C
