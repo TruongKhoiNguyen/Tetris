@@ -18,4 +18,4 @@
 * 8.5
 
 ## Nguồn tham khảo
-* [How to make a full Tetris game in c++](https://www.youtube.com/watch?v=kh3rkt6nZ2c&t=2591s)
+* [How to make a full Tetris game in C/C++](https://www.youtube.com/watch?v=kh3rkt6nZ2c&t=2591s)
